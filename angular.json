@@ -29,9 +29,13 @@
                 "input": "public"
               }
             ],
+            "polyfills": [
+                "zone.js"
+            ],
             "styles": [
               "src/styles.scss"
             ],
+            
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
