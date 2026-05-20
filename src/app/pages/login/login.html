@@ -1,42 +1,45 @@
 <div class="login-page">
 
-  <div class="top-logo">
-    <div class="mini-logo">T</div>
-    <span>Task Tutorials</span>
-  </div>
-
   <div class="main-logo">
     T
   </div>
 
   <h1>Task Tutorials</h1>
 
-  <p class="subtitle">Master your momentum.</p>
+  <p class="subtitle">
+    Master your momentum.
+  </p>
 
   <div class="login-card">
 
     <label>Email or Username</label>
 
     <input
-      type="text"
-      placeholder="student@gmail.com"
-    >
+      type="email"
+      placeholder="Enter your email"
+      [(ngModel)]="email"
+      required
+      (keyup.enter)="login()"
+    />
 
     <label>Password</label>
 
     <div class="password-field">
 
-     <input
-  [type]="showPassword ? 'text' : 'password'"
-  placeholder="••••••••••"
->
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="••••••••••"
+        [(ngModel)]="password"
+        required
+        (keyup.enter)="login()"
+      />
 
-  <span
-  class="eye-icon"
-  (click)="togglePassword()"
->
-  👁️
-</span>
+      <span
+        class="eye-icon"
+        (click)="togglePassword()"
+      >
+        👁️
+      </span>
 
     </div>
 
@@ -44,48 +47,42 @@
       Forgot Password?
     </p>
 
-    <button class="signin-btn">
+    <button
+      class="signin-btn"
+      (click)="login()"
+    >
       Sign In
     </button>
 
-    <div class="divider">
-      <span>OR CONTINUE WITH</span>
-    </div>
-
+  
     <div class="social-buttons">
-<button
-  class="google-btn"
-  (click)="googleLogin()"
->
 
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
-    alt="google"
-  >
+      <button
+        class="google-btn"
+        (click)="googleLogin()"
+      >
 
-  Google
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+          alt="google"
+        />
 
-</button>
+        Continue with Google
 
-<button class="apple-btn">
-
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/0/747.png"
-    alt="apple"
-  >
-
-  Apple
-
-</button>
+      </button>
 
     </div>
 
   </div>
 
   <p class="signup-text">
+
     Don’t have an account?
-    
-   <span routerLink="/signup">Sign Up</span>
+
+    <span routerLink="/signup">
+      Sign Up
+    </span>
+
   </p>
 
 </div>

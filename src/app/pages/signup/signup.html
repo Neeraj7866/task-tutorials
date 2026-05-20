@@ -1,10 +1,5 @@
 <div class="signup-page">
 
-  <div class="top-logo">
-    <div class="mini-logo">T</div>
-    <span>Task Tutorials</span>
-  </div>
-
   <div class="main-logo">
     T
   </div>
@@ -22,26 +17,40 @@
 
     <input
       type="text"
-      placeholder="Adam Kumar"
-    >
+      placeholder="Enter your full name"
+      [(ngModel)]="fullName"
+      name="fullName"
+      required
+    />
 
     <label>Email</label>
 
     <input
       type="email"
       placeholder="student@gmail.com"
-    >
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
 
     <label>Password</label>
 
     <div class="password-field">
 
       <input
-        type="password"
+        [type]="showPassword ? 'text' : 'password'"
         placeholder="••••••••••"
-      >
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
 
-      <span class="eye-icon">👁️</span>
+      <span
+        class="eye-icon"
+        (click)="togglePassword()"
+      >
+        👁️
+      </span>
 
     </div>
 
@@ -50,45 +59,46 @@
     <div class="password-field">
 
       <input
-        type="password"
-        placeholder="••••••••••"
-      >
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Confirm Password"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        required
+        (keyup.enter)="signup()"
+      />
 
-      <span class="eye-icon">👁️</span>
+      <span
+        class="eye-icon"
+        (click)="togglePassword()"
+      >
+        👁️
+      </span>
 
     </div>
 
-    <button class="signup-btn">
+    <button
+      class="signup-btn"
+      (click)="signup()"
+    >
       Create account
     </button>
 
-    <div class="divider">
-      <span>OR CONTINUE WITH</span>
-    </div>
-
     <div class="social-buttons">
 
-     <button class="google-btn">
+      <button
+        class="google-btn"
+        (click)="googleSignup()"
+      >
 
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
-    alt="google"
-  >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+          alt="google"
+        />
 
-  Google
+        Continue with Google
 
-</button>
+      </button>
 
-<button class="apple-btn">
-
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/0/747.png"
-    alt="apple"
-  >
-
-  Apple
-
-</button>
     </div>
 
   </div>

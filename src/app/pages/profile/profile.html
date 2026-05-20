@@ -1,1 +1,218 @@
-<p>profile works!</p>
+<div
+  class="profile-page"
+  [class.dark-page]="isDarkMode"
+>
+  <!-- TOP NAVBAR -->
+
+  <div class="top-navbar">
+
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <h2>TASK TUTORIALS</h2>
+
+    <img
+      src="https://i.pravatar.cc/100"
+      class="nav-profile"
+    />
+
+  </div>
+
+  <!-- PROFILE SECTION -->
+
+  <div class="profile-section">
+
+    <div class="profile-image-wrapper">
+
+      <img
+        src="https://i.pravatar.cc/200"
+        class="profile-image"
+      />
+
+      <div class="edit-icon">
+        <i class="fa-solid fa-pen"></i>
+      </div>
+
+    </div>
+
+    <h1>Aaryan Sharma</h1>
+
+    <span class="student-badge">Student</span>
+
+  </div>
+
+  <!-- STATS -->
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>24</h2>
+      <p>CLASSES</p>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-regular fa-square-check"></i>
+      <h2>112</h2>
+      <p>TASKS</p>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-regular fa-clock"></i>
+      <h2>86h</h2>
+      <p>STUDY</p>
+    </div>
+
+  </div>
+
+  <!-- ACCOUNT OPTIONS -->
+
+  <div class="section-title">
+    <h3>Account Options</h3>
+  </div>
+
+  <div class="options-container">
+
+    <div class="option-card">
+
+      <div class="option-left">
+
+        <div class="option-icon pink">
+          <i class="fa-regular fa-user"></i>
+        </div>
+
+        <div>
+          <h4>Personal Information</h4>
+          <p>Manage your profile details</p>
+        </div>
+
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+
+    </div>
+
+    <div class="option-card">
+
+      <div class="option-left">
+
+        <div class="option-icon green">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div>
+          <h4>My Courses</h4>
+          <p>View enrolled programs</p>
+        </div>
+
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+
+    </div>
+
+    <div class="option-card">
+
+      <div class="option-left">
+
+        <div class="option-icon lightgreen">
+          <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <div>
+          <h4>Payment History</h4>
+          <p>Invoices and transactions</p>
+        </div>
+
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+
+    </div>
+
+    <div class="option-card">
+
+      <div class="option-left">
+
+        <div class="option-icon gray">
+          <i class="fa-regular fa-circle-question"></i>
+        </div>
+
+        <div>
+          <h4>Help & Support</h4>
+          <p>FAQs and direct contact</p>
+        </div>
+
+      </div>
+
+      <i class="fa-solid fa-chevron-right"></i>
+
+    </div>
+
+  </div>
+
+  <!-- SETTINGS -->
+
+  <div class="section-title">
+    <h3>App Settings</h3>
+  </div>
+
+  <div class="settings-container">
+
+    <div class="setting-item">
+
+      <div class="setting-left">
+
+        <div class="setting-icon">
+          <i class="fa-regular fa-moon"></i>
+        </div>
+
+        <span>Dark Mode</span>
+
+      </div>
+
+      <label class="switch">
+        <input
+  type="checkbox"
+  (change)="toggleDarkMode()"
+/>
+        <span class="slider"></span>
+      </label>
+
+    </div>
+
+    <div class="setting-item">
+
+      <div class="setting-left">
+
+        <div class="setting-icon">
+          <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <span>Push Notifications</span>
+
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+
+    </div>
+
+  </div>
+
+  <!-- LOGOUT -->
+
+  <button class="logout-btn" (click)="logout()">
+
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+    Log Out
+
+  </button>
+
+</div>
+
+<app-bottom-nav></app-bottom-nav>

@@ -13,6 +13,11 @@ export const routes: Routes = [
   component: Login
 },
 
+{
+  path:'login',
+  component:Login
+},
+
   {
     path: 'signup',
     component: Signup
