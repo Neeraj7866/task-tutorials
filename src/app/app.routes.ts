@@ -5,8 +5,21 @@ import { Live } from './pages/live/live';
 import { Library } from './pages/library/library';
 import { RecordingsComponent } from './pages/recordings/recordings';
 import { Profile } from './pages/profile/profile';
+import { RecordingDetails } from './pages/recording-details/recording-details';
+import { LibraryDetails } from './pages/library-details/library-details';
 
 export const routes: Routes = [
+
+  {
+  path:'library-details/:subject',
+  component:LibraryDetails
+},
+
+{
+  path:'recording-details/:subject',
+  component:RecordingDetails
+},
+
 
  {
   path: '',

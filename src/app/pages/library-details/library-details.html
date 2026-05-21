@@ -1,0 +1,88 @@
+<div class="details-page">
+
+  <div class="top-navbar">
+
+    <i class="fa-solid fa-bars"></i>
+
+    <h2>TASK TUTORIALS</h2>
+
+    <img
+      src="https://i.pravatar.cc/100"
+      alt="profile"
+    >
+
+  </div>
+
+  <div class="subject-navbar">
+
+    <h1>
+
+      {{ subject.replaceAll('-', ' ') }}
+
+    </h1>
+
+  </div>
+
+  <div class="lecture-list">
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} Notes 1
+
+          </h3>
+
+          <p class="duration">PDF Notes</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-regular fa-file-lines"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        📄 Open Notes
+      </button>
+
+    </div>
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} Notes 2
+
+          </h3>
+
+          <p class="duration">Important Questions</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-regular fa-file-lines"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        📄 Open Notes
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-bottom-nav></app-bottom-nav>

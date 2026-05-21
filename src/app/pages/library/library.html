@@ -1,17 +1,32 @@
 <div class="library-page">
 
-    <div class="top-navbar">
+  <!-- TOP NAVBAR -->
 
-  <i class="fa-solid fa-bars"></i>
+  <div class="top-navbar">
 
-  <h2>TASK TUTORIALS</h2>
+    <i class="fa-solid fa-bars"></i>
 
-  <img
-    src="https://i.pravatar.cc/100"
-    alt="profile"
+    <h2>TASK TUTORIALS</h2>
+
+    <i
+      class="fa-solid fa-magnifying-glass search-btn"
+      (click)="toggleSearch()"
+    ></i>
+
+  </div>
+
+  <!-- SEARCH -->
+
+  <input
+    *ngIf="showSearch"
+    type="text"
+    placeholder="Search notes..."
+    [(ngModel)]="searchText"
+    class="search-input"
   >
 
-</div>
+  <!-- HEADER -->
+
   <div class="top-header">
 
     <div class="header-content">
@@ -22,11 +37,9 @@
 
     </div>
 
-    <div class="search-icon">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-
   </div>
+
+  <!-- DROPDOWN -->
 
   <div class="dropdown-section">
 
@@ -40,13 +53,19 @@
 
   </div>
 
+  <!-- NOTES GRID -->
+
   <div class="notes-grid">
 
-    <div class="note-card">
+    <div
+      class="note-card"
+      routerLink="/library-details/expansions"
+    >
 
-    <div class="folder-icon">
-  <i class="fa-regular fa-folder"></i>
-</div>
+      <div class="folder-icon">
+        <i class="fa-regular fa-folder"></i>
+      </div>
+
       <h3>Expansions</h3>
 
       <p>12 Notes</p>
@@ -55,10 +74,14 @@
 
     </div>
 
-    <div class="note-card">
-<div class="folder-icon">
-  <i class="fa-regular fa-folder"></i>
-</div>
+    <div
+      class="note-card"
+      routerLink="/library-details/rational-numbers"
+    >
+
+      <div class="folder-icon">
+        <i class="fa-regular fa-folder"></i>
+      </div>
 
       <h3>Rational Numbers</h3>
 
@@ -68,11 +91,14 @@
 
     </div>
 
-    <div class="note-card">
+    <div
+      class="note-card"
+      routerLink="/library-details/factorisation"
+    >
 
-    <div class="folder-icon">
-  <i class="fa-regular fa-folder"></i>
-</div>
+      <div class="folder-icon">
+        <i class="fa-regular fa-folder"></i>
+      </div>
 
       <h3>Factorisation</h3>
 
@@ -82,11 +108,14 @@
 
     </div>
 
-    <div class="note-card">
+    <div
+      class="note-card"
+      routerLink="/library-details/simple-algebra"
+    >
 
-     <div class="folder-icon">
-  <i class="fa-regular fa-folder"></i>
-</div>
+      <div class="folder-icon">
+        <i class="fa-regular fa-folder"></i>
+      </div>
 
       <h3>Simple Algebra</h3>
 

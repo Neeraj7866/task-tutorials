@@ -1,0 +1,158 @@
+<div class="details-page">
+
+  <!-- TOP NAVBAR -->
+
+<div class="top-navbar">
+
+  <i class="fa-solid fa-bars"></i>
+
+  <h2>TASK TUTORIALS</h2>
+
+  <i
+    class="fa-solid fa-magnifying-glass search-btn"
+    (click)="toggleSearch()"
+  ></i>
+
+</div>
+
+<input
+  *ngIf="showSearch"
+  type="text"
+  placeholder="Search lectures..."
+  [(ngModel)]="searchText"
+  class="search-input"
+/>
+
+  <!-- SUBJECT HEADER -->
+
+  <div class="subject-navbar">
+
+    <h1>
+
+      {{ subject.replaceAll('-', ' ') }}
+
+    </h1>
+
+  </div>
+
+  <!-- LECTURES -->
+
+  <div class="lecture-list">
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} - Lecture 1
+
+          </h3>
+
+          <p class="duration">45 mins</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        ▶ Watch Recording
+      </button>
+
+    </div>
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} - Lecture 2
+
+          </h3>
+
+          <p class="duration">38 mins</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        ▶ Watch Recording
+      </button>
+
+    </div>
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} - Lecture 3
+
+          </h3>
+
+          <p class="duration">52 mins</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        ▶ Watch Recording
+      </button>
+
+    </div>
+
+    <div class="lecture-card">
+
+      <div class="lecture-top">
+
+        <div>
+
+          <h3>
+
+            {{ subject.replaceAll('-', ' ') }} - Lecture 4
+
+          </h3>
+
+          <p class="duration">41 mins</p>
+
+        </div>
+
+        <div class="video-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+
+      </div>
+
+      <button class="watch-btn">
+        ▶ Watch Recording
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-bottom-nav></app-bottom-nav>
