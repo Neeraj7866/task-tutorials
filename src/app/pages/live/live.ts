@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 @Component({
   selector: 'app-live',
-  imports: [BottomNav],
+
+  standalone:true,
+
+  imports:[BottomNav],
+
   templateUrl: './live.html',
+
   styleUrl: './live.scss',
 })
-export class Live {}
+
+export class Live implements OnInit {
+
+  ngOnInit(): void {
+
+    window.scrollTo(0,0);
+  }
+
+}

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 @Component({
@@ -14,7 +16,7 @@ import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
   styleUrl: './library-details.scss',
 })
 
-export class LibraryDetails {
+export class LibraryDetails implements OnInit {
 
   subject='';
 
@@ -22,6 +24,11 @@ export class LibraryDetails {
 
     this.subject =
     this.route.snapshot.params['subject'];
+  }
+
+  ngOnInit(): void {
+
+    window.scrollTo(0,0);
   }
 
 }

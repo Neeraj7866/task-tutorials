@@ -16,6 +16,12 @@
     />
 
   </div>
+<input
+  *ngIf="showSearch"
+  type="text"
+  placeholder="Search recordings..."
+  class="search-input"
+/>
 
   <!-- HEADER -->
 
@@ -29,9 +35,14 @@
 
     </div>
 
-    <div class="search-icon">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
+ <div
+  class="search-icon"
+  (click)="toggleSearch()"
+>
+
+  <i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
 
   </div>
 
@@ -41,9 +52,9 @@
 
     <select>
 
-      <option>Xth PCMB</option>
+     <option>Xᵗʰ PCMB</option>
 
-      <option>IXth PCMB</option>
+<option>IXᵗʰ PCMB</option>
 
     </select>
 
@@ -70,90 +81,12 @@
 
     </div>
 
-    <div
-      class="video-card"
-      routerLink="/recording-details/exponents"
-    >
+   
 
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
+   
 
-      <h3>Exponents</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 8 Videos</p>
-
-      <span>Yesterday</span>
-
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/matter-and-exponents"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
-
-      <h3>Matter And Exponents</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 15 Videos</p>
-
-      <span>5 days ago</span>
-
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/rational-number"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
-
-      <h3>Rational Number</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 6 Videos</p>
-
-      <span>1 week ago</span>
-
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/fundamental-concept"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
-
-      <h3>Fundamental Concept</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 20 Videos</p>
-
-      <span>3 days ago</span>
-
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/physical-and-chemical-changes"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
-
-      <h3>Physical and Chemical Changes</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 10 Videos</p>
-
-      <span>2 weeks ago</span>
-
-    </div>
+  
+   
 
     <div
       class="video-card"

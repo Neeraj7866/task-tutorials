@@ -1,34 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
+
 import { Auth, signOut } from '@angular/fire/auth';
 
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-profile',
-  imports: [BottomNav],
+
+  standalone:true,
+
+  imports:[BottomNav],
+
   templateUrl: './profile.html',
+
   styleUrl: './profile.scss',
 })
-export class Profile {
+
+export class Profile implements OnInit {
 
   constructor(
 
-  private auth:Auth,
+    private auth:Auth,
 
-  private router:Router
+    private router:Router
 
-){}
+  ){}
+
   isDarkMode = false;
 
-toggleDarkMode(){
+  ngOnInit(): void {
 
-  document.body.classList.toggle('dark-mode');
-}
-async logout(){
+    window.scrollTo(0,0);
+  }
 
-  await signOut(this.auth);
+  toggleDarkMode(){
 
-  this.router.navigate(['/login']);
+    this.isDarkMode = !this.isDarkMode;
 
-}
+    document.body.classList.toggle('dark-mode');
+  }
+
+  async logout(){
+
+    await signOut(this.auth);
+
+    this.router.navigate(['/login']);
+  }
+
 }

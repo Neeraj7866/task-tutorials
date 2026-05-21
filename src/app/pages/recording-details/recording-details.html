@@ -2,26 +2,28 @@
 
   <!-- TOP NAVBAR -->
 
-<div class="top-navbar">
+  <div class="top-navbar">
 
-  <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars"></i>
 
-  <h2>TASK TUTORIALS</h2>
+    <h2>TASK TUTORIALS</h2>
 
-   <img
+    <img
       src="https://i.pravatar.cc/100"
       alt="profile"
     >
 
-</div>
+  </div>
 
-<input
-  *ngIf="showSearch"
-  type="text"
-  placeholder="Search lectures..."
-  [(ngModel)]="searchText"
-  class="search-input"
-/>
+  <!-- SEARCH -->
+
+  <input
+    *ngIf="showSearch"
+    type="text"
+    placeholder="Search lectures..."
+    [(ngModel)]="searchText"
+    class="search-input"
+  />
 
   <!-- SUBJECT HEADER -->
 
@@ -35,25 +37,15 @@
 
   </div>
 
-  <!-- LECTURES -->
+  <!-- LECTURE LIST -->
 
   <div class="lecture-list">
 
+    <!-- CARD 1 -->
+
     <div class="lecture-card">
 
       <div class="lecture-top">
-
-        <div>
-
-          <h3>
-
-            {{ subject.replaceAll('-', ' ') }} - Lecture 1
-
-          </h3>
-
-          <p class="duration">45 mins</p>
-
-        </div>
 
         <div class="video-icon">
           <i class="fa-solid fa-video"></i>
@@ -61,27 +53,31 @@
 
       </div>
 
+      <h3>
+
+        {{ subject.replaceAll('-', ' ') }} - Lecture 1
+
+      </h3>
+
+      <p class="duration">
+
+        45 mins
+
+      </p>
+
       <button class="watch-btn">
+
         ▶ Watch Recording
+
       </button>
 
     </div>
 
+    <!-- CARD 2 -->
+
     <div class="lecture-card">
 
       <div class="lecture-top">
-
-        <div>
-
-          <h3>
-
-            {{ subject.replaceAll('-', ' ') }} - Lecture 2
-
-          </h3>
-
-          <p class="duration">38 mins</p>
-
-        </div>
 
         <div class="video-icon">
           <i class="fa-solid fa-video"></i>
@@ -89,27 +85,31 @@
 
       </div>
 
+      <h3>
+
+        {{ subject.replaceAll('-', ' ') }} - Lecture 2
+
+      </h3>
+
+      <p class="duration">
+
+        38 mins
+
+      </p>
+
       <button class="watch-btn">
+
         ▶ Watch Recording
+
       </button>
 
     </div>
 
+    <!-- CARD 3 -->
+
     <div class="lecture-card">
 
       <div class="lecture-top">
-
-        <div>
-
-          <h3>
-
-            {{ subject.replaceAll('-', ' ') }} - Lecture 3
-
-          </h3>
-
-          <p class="duration">52 mins</p>
-
-        </div>
 
         <div class="video-icon">
           <i class="fa-solid fa-video"></i>
@@ -117,27 +117,31 @@
 
       </div>
 
+      <h3>
+
+        {{ subject.replaceAll('-', ' ') }} - Lecture 3
+
+      </h3>
+
+      <p class="duration">
+
+        52 mins
+
+      </p>
+
       <button class="watch-btn">
+
         ▶ Watch Recording
+
       </button>
 
     </div>
 
+    <!-- CARD 4 -->
+
     <div class="lecture-card">
 
       <div class="lecture-top">
-
-        <div>
-
-          <h3>
-
-            {{ subject.replaceAll('-', ' ') }} - Lecture 4
-
-          </h3>
-
-          <p class="duration">41 mins</p>
-
-        </div>
 
         <div class="video-icon">
           <i class="fa-solid fa-video"></i>
@@ -145,8 +149,22 @@
 
       </div>
 
+      <h3>
+
+        {{ subject.replaceAll('-', ' ') }} - Lecture 4
+
+      </h3>
+
+      <p class="duration">
+
+        41 mins
+
+      </p>
+
       <button class="watch-btn">
+
         ▶ Watch Recording
+
       </button>
 
     </div>

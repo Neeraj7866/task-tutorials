@@ -5,7 +5,8 @@
   background:#f7f7f7;
 
   padding-bottom:110px;
-  padding-top:40px
+
+  padding-top:70px;
 }
 
 /* TOP NAVBAR */
@@ -14,7 +15,7 @@
 
   background:white;
 
-  padding:14px 18px;
+  padding:18px 18px;
 
   display:flex;
 
@@ -31,22 +32,24 @@
   width:100%;
 
   z-index:1000;
+
   box-sizing:border-box;
 
-overflow:hidden;
+  overflow:hidden;
 }
+
 .top-navbar i{
 
   color:#ff5a5f;
 
-  font-size:18px;
+  font-size:20px;
 }
 
 .top-navbar h2{
 
   color:#ff5a5f;
 
-  font-size:16px;
+  font-size:20px;
 
   font-weight:700;
 
@@ -68,11 +71,13 @@ overflow:hidden;
 
 .subject-navbar{
 
-  margin:18px;
-
+  margin:16px;
+  margin-top: 0px;
   background:#ff5a5f;
 
   padding:18px;
+
+  border-radius:10px;
 
   text-align:center;
 }
@@ -83,160 +88,38 @@ overflow:hidden;
 
   text-transform:capitalize;
 
-  font-size:34px;
+  font-size:26px;
 
   font-weight:800;
 
   margin:0;
 }
 
-/* LECTURE GRID */
-
-.lecture-list{
-
-  display:grid;
-
-  grid-template-columns:repeat(auto-fit,minmax(300px,300px));
-
-  gap:24px;
-
-  justify-content:center;
-
-  padding:10px 18px;
-}
-
-.lecture-card{
-
-  background:white;
-
-  border-radius:24px;
-
-  padding:24px;
-
-  box-shadow:0 2px 12px rgba(0,0,0,0.05);
-}
-
-.lecture-top{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:flex-start;
-
-  margin-bottom:20px;
-}
-
-.video-icon{
-
-  width:52px;
-
-  height:52px;
-
-  background:#fff1f1;
-
-  border-radius:14px;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-}
-
-.video-icon i{
-
-  color:#ff5a5f;
-
-  font-size:22px;
-}
-
-.duration{
-
-  color:gray;
-
-  margin-top:10px;
-}
-
-.watch-btn{
-
-  width:100%;
-
-  padding:15px;
-
-  border:none;
-
-  border-radius:16px;
-
-  background:#ff5a5f;
-
-  color:white;
-
-  font-size:17px;
-
-  font-weight:700;
-
-  cursor:pointer;
-}
-.search-input{
-
-  width:100%;
-
-  max-width:220px;
-
-  padding:10px 14px;
-
-  border:none;
-
-  border-radius:12px;
-
-  outline:none;
-
-  background:#f3f3f3;
-
-  font-size:14px;
-}
-
-.search-btn{
-
-  color:#ff5a5f;
-
-  font-size:20px;
-
-  cursor:pointer;
-}
-.navbar-title{
-
-  color:#ff5a5f;
-
-  font-size:16px;
-
-  font-weight:700;
-}
+/* SEARCH */
 
 .search-input{
 
   position:absolute;
 
-  top:70px;
+  top:72px;
 
   right:18px;
 
-  width:240px;
+  width:220px;
 
-  padding:14px;
+  padding:12px;
 
   border:none;
 
-  border-radius:16px;
+  border-radius:14px;
 
   outline:none;
 
   background:white;
 
-  font-size:15px;
+  font-size:14px;
 
-  box-shadow:0 4px 16px rgba(0,0,0,0.1);
+  box-shadow:0 4px 16px rgba(0,0,0,0.08);
 
   z-index:100;
 }
@@ -248,4 +131,160 @@ overflow:hidden;
   font-size:18px;
 
   cursor:pointer;
+}
+
+/* GRID */
+
+.lecture-list{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:14px;
+
+  padding:0 14px 20px;
+}
+
+/* CARD */
+
+.lecture-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:14px 10px;
+
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+
+  min-height:210px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  text-align:center;
+}
+
+/* ICON TOP */
+
+.lecture-top{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  margin-bottom:14px;
+}
+/* ICON */
+
+.video-icon{
+
+  width:42px;
+
+  height:42px;
+
+  background:#fff1f1;
+
+  border-radius:10px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  margin:0 auto;
+}
+
+.video-icon i{
+
+  color:#ff5a5f;
+
+  font-size:18px;
+}
+
+/* TITLE */
+
+.lecture-card h3{
+
+  font-size:15px;
+
+  font-weight:800;
+
+  line-height:1.25;
+
+  text-align:center;
+
+  margin-top:8px;
+
+  margin-bottom:10px;
+
+  min-height:42px;
+}
+
+/* DURATION */
+
+.duration{
+
+  color:gray;
+
+  font-size:13px;
+
+  text-align:center;
+
+  margin-bottom:14px;
+}
+
+/* BUTTON */
+
+.watch-btn{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#ff5a5f;
+
+  color:white;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.watch-btn i{
+
+  margin-right:6px;
+}
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+  .lecture-list{
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:22px;
+
+    padding:0 24px 24px;
+  }
+
+  .lecture-card{
+
+    min-height:220px;
+  }
 }

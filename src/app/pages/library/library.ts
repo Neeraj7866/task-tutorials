@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
+
 import { RouterLink } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -21,11 +25,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './library.scss',
 })
 
-export class Library {
+export class Library implements OnInit {
 
   showSearch = false;
 
   searchText = '';
+
+  ngOnInit(): void {
+
+    window.scrollTo(0,0);
+  }
 
   toggleSearch(){
 

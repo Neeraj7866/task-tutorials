@@ -157,3 +157,139 @@ body.dark-mode .logout-btn{
   color:#ff5a5f !important;
 }
 
+@media(max-width:768px){
+
+  .profile-page{
+
+    padding-top:72px !important;
+  }
+
+  .profile-section{
+
+    padding:10px 16px 10px !important;
+  }
+
+  .profile-image{
+
+    width:90px !important;
+
+    height:90px !important;
+
+    border-width:4px !important;
+  }
+
+  .edit-icon{
+
+    width:28px !important;
+
+    height:28px !important;
+
+    font-size:11px !important;
+  }
+
+  .profile-section h1{
+
+    font-size:22px !important;
+
+    margin-top:10px !important;
+  }
+
+  .student-badge{
+
+    margin-top:8px !important;
+
+    padding:6px 16px !important;
+
+    font-size:13px !important;
+  }
+
+  /* STATS */
+
+  .stats-grid{
+
+    gap:10px !important;
+
+    padding:0 14px !important;
+
+    margin-top:8px !important;
+  }
+
+  .stat-card{
+
+    padding:14px 8px !important;
+
+    border-radius:16px !important;
+  }
+
+  .stat-card h2{
+
+    font-size:18px !important;
+
+    margin-top:8px !important;
+  }
+
+  .stat-card p{
+
+    font-size:11px !important;
+
+    margin-top:4px !important;
+  }
+
+  .stat-card i{
+
+    font-size:16px !important;
+  }
+
+  /* SECTION TITLE */
+
+  .section-title{
+
+    padding:18px 16px 10px !important;
+  }
+
+  .section-title h3{
+
+    font-size:20px !important;
+  }
+
+  /* ACCOUNT OPTIONS */
+
+  .options-container{
+
+    padding:0 14px !important;
+  }
+
+  .option-card{
+
+    padding:16px !important;
+
+    margin-bottom:12px !important;
+
+    border-radius:18px !important;
+  }
+
+  .option-icon{
+
+    width:42px !important;
+
+    height:42px !important;
+  }
+
+  .option-card h4{
+
+    font-size:16px !important;
+  }
+
+  .option-card p{
+
+    font-size:13px !important;
+
+    margin-top:4px !important;
+  }
+  .setting-left span{
+
+  font-size:16  px !important;
+
+  font-weight:700 !important;
+}
+}

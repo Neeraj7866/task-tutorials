@@ -1,7 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
+
 import { ActivatedRoute } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -20,7 +24,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './recording-details.scss',
 })
 
-export class RecordingDetails {
+export class RecordingDetails implements OnInit {
 
   subject='';
 
@@ -32,6 +36,11 @@ export class RecordingDetails {
 
     this.subject =
     this.route.snapshot.params['subject'];
+  }
+
+  ngOnInit(): void {
+
+    window.scrollTo(0,0);
   }
 
   toggleSearch(){
