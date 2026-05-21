@@ -5,5 +5,155 @@
   font-family:'Poppins',sans-serif;
 
 }
+body.dark-mode{
 
+  background:#121212;
+
+  color:white;
+}
+
+/* MAIN PAGE BACKGROUNDS */
+
+body.dark-mode .library-page,
+body.dark-mode .recordings-page,
+body.dark-mode .profile-page,
+body.dark-mode .live-page,
+body.dark-mode .recording-details-page,
+body.dark-mode .library-details-page{
+
+  background:#121212 !important;
+
+  color:white !important;
+}
+
+/* NAVBAR */
+
+body.dark-mode .top-navbar{
+
+  background:#1e1e1e !important;
+}
+
+/* BOTTOM NAV */
+
+body.dark-mode .bottom-nav{
+
+  background:#1e1e1e !important;
+
+  border-top:1px solid #333;
+}
+
+/* TOP HEADER / HERO SECTION */
+
+body.dark-mode .top-header,
+body.dark-mode .live-banner,
+body.dark-mode .hero-section{
+
+  background:#ff5a5f !important;
+
+  color:white !important;
+}
+
+/* ALL CARDS */
+
+body.dark-mode .note-card,
+body.dark-mode .video-card,
+body.dark-mode .lecture-card,
+body.dark-mode .schedule-card,
+body.dark-mode .stat-card,
+body.dark-mode .option-card,
+body.dark-mode .setting-item,
+body.dark-mode .subject-card{
+
+  background:#1f1f1f !important;
+
+  color:white !important;
+
+  box-shadow:none !important;
+}
+
+/* SECTION CONTAINERS */
+
+body.dark-mode .stats-grid,
+body.dark-mode .options-container,
+body.dark-mode .settings-container,
+body.dark-mode .cards-container,
+body.dark-mode .schedule-container{
+
+  background:transparent !important;
+}
+
+/* HEADINGS */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6{
+
+  color:white !important;
+}
+
+/* PARAGRAPHS / SPANS */
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode small{
+
+  color:#d1d1d1 !important;
+}
+
+/* DROPDOWNS */
+
+body.dark-mode select{
+
+  background:#1f1f1f !important;
+
+  color:white !important;
+
+  border:none !important;
+}
+
+/* INPUTS */
+
+body.dark-mode input{
+
+  background:#2a2a2a !important;
+
+  color:white !important;
+
+  border:none !important;
+}
+
+/* BUTTONS */
+
+body.dark-mode button{
+
+  border:none;
+}
+
+/* ICONS */
+
+body.dark-mode i{
+
+  color:inherit;
+}
+
+/* PROFILE BADGE */
+
+body.dark-mode .student-badge{
+
+  background:#34c759 !important;
+
+  color:white !important;
+}
+
+/* LOGOUT BUTTON */
+
+body.dark-mode .logout-btn{
+
+  background:#2a2a2a !important;
+
+  color:#ff5a5f !important;
+}
 

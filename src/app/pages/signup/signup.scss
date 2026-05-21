@@ -18,25 +18,36 @@
   align-items:center;
 }
 
-.main-logo{
+.logo-circle{
 
-  margin-top:10px;
+  width:110px;
 
-  width:100px;
-  height:100px;
+  height:110px;
 
   border-radius:50%;
 
-  background:#ff5b5b;
+  overflow:hidden;
 
-  color:white;
+  margin:0 auto 20px;
+
+  background:white;
 
   display:flex;
-  justify-content:center;
+
   align-items:center;
 
-  font-size:50px;
-  font-weight:bold;
+  justify-content:center;
+}
+
+.logo-img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:50%;
 }
 
 h1{

@@ -5,7 +5,7 @@
   min-height:100vh;
 
   padding-bottom:100px;
-  padding-top:70px;
+  padding-top: 90px;
 
 }
 
@@ -31,25 +31,19 @@
   width:100%;
 
   z-index:1000;
-}
+  box-sizing:border-box;
 
-.top-navbar i{
 
-  color:#ff5a5f;
-
-  font-size:18px;
-
+overflow:hidden;
 }
 
 .top-navbar h2{
 
   color:#ff5a5f;
 
-  font-size:16px;
+  font-size:20px;
 
-  font-weight:600;
-
-  margin:0;
+  font-weight:700;
 
 }
 
