@@ -178,11 +178,10 @@
 
   align-items:center;
 
-  backdrop-filter:blur(10px);
-
   cursor:pointer;
 
   transition:0.3s;
+  margin-top: 12px;
 }
 
 .search-icon:hover{
