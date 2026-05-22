@@ -517,3 +517,33 @@
 
   font-weight:600;
 }                 
+
+body.dark-mode .upcoming-card{
+
+  background:white;
+}
+
+body.dark-mode .upcoming-card h3{
+
+  color:#111 !important;
+}
+
+body.dark-mode .time-row{
+
+  color:gray !important;
+}
+
+body.dark-mode .teacher-row span{
+
+  color:gray !important;
+}
+
+body.dark-mode .lesson-row{
+
+  color:gray !important;
+}
+body.dark-mode .upcoming-card h3,
+body.dark-mode .upcoming-card h3 sup{
+
+  color:#111 !important;
+}

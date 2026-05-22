@@ -292,4 +292,34 @@ body.dark-mode .logout-btn{
 
   font-weight:700 !important;
 }
+
+body.dark-mode .chip{
+
+  background:#f5f5f5;
+
+  color:#111;
+}
+
+body.dark-mode .active-chip{
+
+  background:#ff5a5f;
+
+  color:white;
+}
+
+body.dark-mode select{
+
+  background:#1f1f1f;
+
+  color:white;
+}
+
+body.dark-mode option{
+
+  color:black;
+}
+body.dark-mode .upcoming-card h3{
+
+  color:black;
+}
 }

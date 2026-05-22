@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 
@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 
 })
 
-export class App {
+export class App implements OnInit {
 
   constructor(
 
@@ -32,26 +32,39 @@ export class App {
 
     onAuthStateChanged(this.auth, (user)=>{
 
-     if(user){
+      if(user){
 
-  if(this.router.url !== '/live'){
+        if(
+          this.router.url === '/' ||
+          this.router.url === '/login'
+        ){
 
-    this.router.navigate(['/live']);
+          this.router.navigate(['/live']);
+        }
 
-  }
+      }else{
 
-}
-else{
+        if(this.router.url !== '/login'){
 
-  if(this.router.url !== '/login'){
-
-    this.router.navigate(['/login']);
-
-  }
-
-}
+          this.router.navigate(['/login']);
+        }
+      }
     });
+  }
 
+  ngOnInit(): void {
+
+    const darkMode =
+    localStorage.getItem('darkMode');
+
+    if(darkMode === 'enabled'){
+
+      document.body.classList.add('dark-mode');
+
+    }else{
+
+      document.body.classList.remove('dark-mode');
+    }
   }
 
 }

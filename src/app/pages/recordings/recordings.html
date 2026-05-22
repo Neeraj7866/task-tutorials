@@ -16,12 +16,9 @@
     />
 
   </div>
-<input
-  *ngIf="showSearch"
-  type="text"
-  placeholder="Search recordings..."
-  class="search-input"
-/>
+
+  <!-- SEARCH -->
+
 
   <!-- HEADER -->
 
@@ -31,18 +28,60 @@
 
       <h1>Recordings</h1>
 
-      <p>Access your live class recordings</p>
+      <p>
+
+        Continue your learning journey 🚀
+
+      </p>
 
     </div>
 
- <div
-  class="search-icon"
-  (click)="toggleSearch()"
->
+    <div
+      class="search-icon"
+      (click)="toggleSearch()"
+    >
 
-  <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
 
-</div>
+    </div>
+    
+  <input
+    *ngIf="showSearch"
+    type="text"
+    placeholder="Search recordings..."
+    [(ngModel)]="searchText"
+    class="search-input"
+  />
+
+  </div>
+
+  <!-- CATEGORY CHIPS -->
+
+  <div class="chips-container">
+
+    <div class="chip active-chip">
+
+      All
+
+    </div>
+
+    <div class="chip">
+
+      Top
+
+    </div>
+
+    <div class="chip">
+
+      Live
+
+    </div>
+
+    <div class="chip">
+
+      Trending
+
+    </div>
 
   </div>
 
@@ -52,9 +91,9 @@
 
     <select>
 
-     <option>Xᵗʰ PCMB</option>
+      <option>Xᵗʰ PCMB</option>
 
-<option>IXᵗʰ PCMB</option>
+      <option>IXᵗʰ PCMB</option>
 
     </select>
 
@@ -66,93 +105,80 @@
 
     <div
       class="video-card"
-      routerLink="/recording-details/simple-algebra"
+      *ngFor="let subject of filteredSubjects"
+      [routerLink]="subject.route"
     >
 
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
+      <!-- BADGE -->
+
+      <div class="card-badge">
+
+        {{ subject.badge }}
+
       </div>
 
-      <h3>Simple Algebra</h3>
+      <!-- THUMBNAIL -->
 
-      <p><i class="fa-regular fa-circle-play"></i> 12 Videos</p>
+      <div class="thumbnail-section">
 
-      <span>2 days ago</span>
+        
 
-    </div>
-
-   
-
-   
-
-  
-   
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/linear-equations"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
       </div>
 
-      <h3>Linear Equations</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 14 Videos</p>
-
-      <span>4 days ago</span>
-
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/trigonometry"
-    >
+      <!-- ICON -->
 
       <div class="video-icon">
+
         <i class="fa-solid fa-video"></i>
+
       </div>
 
-      <h3>Trigonometry</h3>
+      <!-- TITLE -->
 
-      <p><i class="fa-regular fa-circle-play"></i> 18 Videos</p>
+      <h3>
 
-      <span>1 day ago</span>
+        {{ subject.title }}
 
-    </div>
+      </h3>
 
-    <div
-      class="video-card"
-      routerLink="/recording-details/mensuration"
-    >
+      <!-- VIDEOS -->
 
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
+      <p>
+
+        <i class="fa-regular fa-circle-play"></i>
+
+        {{ subject.videos }}
+
+      </p>
+
+      <!-- PROGRESS -->
+
+      <div class="progress-section">
+
+        <div class="progress-text">
+
+          Completed {{ subject.progress }}%
+
+        </div>
+
+        <div class="progress-bar">
+
+          <div
+            class="progress-fill"
+            [style.width.%]="subject.progress"
+          ></div>
+
+        </div>
+
       </div>
 
-      <h3>Mensuration</h3>
+      <!-- TIME -->
 
-      <p><i class="fa-regular fa-circle-play"></i> 11 Videos</p>
+      <span>
 
-      <span>3 days ago</span>
+        {{ subject.time }}
 
-    </div>
-
-    <div
-      class="video-card"
-      routerLink="/recording-details/probability"
-    >
-
-      <div class="video-icon">
-        <i class="fa-solid fa-video"></i>
-      </div>
-
-      <h3>Probability</h3>
-
-      <p><i class="fa-regular fa-circle-play"></i> 9 Videos</p>
-
-      <span>Today</span>
+      </span>
 
     </div>
 

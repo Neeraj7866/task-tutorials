@@ -30,23 +30,65 @@ export class Profile implements OnInit {
 
   isDarkMode = false;
 
-  ngOnInit(): void {
+ ngOnInit(): void {
 
-    window.scrollTo(0,0);
+  window.scrollTo(0,0);
+
+  const darkMode =
+  localStorage.getItem('darkMode');
+
+  this.isDarkMode =
+  darkMode === 'enabled';
+
+  if(this.isDarkMode){
+
+    document.body.classList.add('dark-mode');
+
+  }else{
+
+    document.body.classList.remove('dark-mode');
   }
+}
 
   toggleDarkMode(){
 
     this.isDarkMode = !this.isDarkMode;
 
-    document.body.classList.toggle('dark-mode');
+    if(this.isDarkMode){
+
+      document.body.classList.add('dark-mode');
+
+      localStorage.setItem(
+        'darkMode',
+        'enabled'
+      );
+
+    }else{
+
+      document.body.classList.remove('dark-mode');
+
+      localStorage.setItem(
+        'darkMode',
+        'disabled'
+      );
+    }
   }
 
-  async logout(){
+async logout(){
 
-    await signOut(this.auth);
+  localStorage.setItem(
+    'darkMode',
+    'disabled'
+  );
 
-    this.router.navigate(['/login']);
-  }
+  document.body.classList.remove(
+    'dark-mode'
+  );
 
+  this.isDarkMode = false;
+
+  await signOut(this.auth);
+
+  this.router.navigate(['/login']);
+}
 }

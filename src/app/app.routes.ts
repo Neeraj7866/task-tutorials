@@ -54,6 +54,9 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: Profile
-  }
-
+  },
+  {
+  path:'**',
+  redirectTo:'live'
+}
 ];

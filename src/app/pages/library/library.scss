@@ -44,6 +44,16 @@
   box-sizing:border-box;
 
   overflow:hidden;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.04);
+}
+
+.top-navbar i{
+
+  color:#ff5a5f;
+
+  font-size:20px;
 }
 
 .top-navbar h2{
@@ -55,54 +65,26 @@
   font-weight:700;
 }
 
-.menu-icon i{
+.nav-profile{
 
-  color:#ff5a5f;
+  width:36px;
 
-  font-size:20px;
-}
+  height:36px;
 
-.search-btn{
+  border-radius:50%;
 
-  cursor:pointer;
-}
-
-/* SEARCH */
-
-.search-input{
-
-  position:absolute;
-
-  top:70px;
-
-  right:18px;
-
-  width:220px;
-
-  padding:12px;
-
-  border:none;
-
-  border-radius:14px;
-
-  outline:none;
-
-  background:white;
-
-  font-size:14px;
-
-  box-shadow:0 4px 16px rgba(0,0,0,0.08);
-
-  z-index:100;
+  object-fit:cover;
 }
 
 /* HEADER */
 
 .top-header{
 
+  position:relative;
+
   background:#ff5a5f;
 
-  padding:18px 18px 15px;
+  padding:18px 18px 78px;
 
   color:white;
 
@@ -111,6 +93,10 @@
   justify-content:space-between;
 
   align-items:flex-start;
+
+  border-bottom-left-radius:24px;
+
+  border-bottom-right-radius:24px;
 }
 
 .header-content h1{
@@ -129,6 +115,65 @@
   margin-top:0;
 }
 
+/* SEARCH ICON */
+
+.search-icon{
+
+  width:42px;
+
+  height:42px;
+
+  background:
+  rgba(255,255,255,0.18);
+
+  border-radius:12px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  cursor:pointer;
+}
+
+.search-icon i{
+
+  color:white;
+
+  font-size:18px;
+}
+
+/* SEARCH */
+
+.search-input{
+
+  position:absolute;
+
+  bottom:18px;
+
+  left:18px;
+
+  width:calc(100% - 80px);
+
+  padding:12px 14px;
+
+  border:none;
+
+  border-radius:14px;
+
+  outline:none;
+
+  background:white;
+
+  font-size:14px;
+
+  box-shadow:
+  0 6px 18px rgba(0,0,0,0.10);
+
+  z-index:100;
+}
+
 /* DROPDOWN */
 
 .dropdown-section{
@@ -140,8 +185,6 @@
   position:relative;
 
   z-index:10;
-
- 
 }
 
 select{
@@ -207,7 +250,12 @@ select{
 
 .note-card:hover{
 
-  transform:translateY(-5px);
+  transform:
+  translateY(-6px)
+  scale(1.02);
+
+  box-shadow:
+  0 14px 28px rgba(255,90,95,0.12);
 }
 
 /* ICON */

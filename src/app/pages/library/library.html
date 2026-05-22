@@ -8,22 +8,12 @@
 
     <h2>TASK TUTORIALS</h2>
 
-    <i
-      class="fa-solid fa-magnifying-glass search-btn"
-      (click)="toggleSearch()"
-    ></i>
+    <img
+      src="https://i.pravatar.cc/100"
+      class="nav-profile"
+    />
 
   </div>
-
-  <!-- SEARCH -->
-
-  <input
-    *ngIf="showSearch"
-    type="text"
-    placeholder="Search notes..."
-    [(ngModel)]="searchText"
-    class="search-input"
-  >
 
   <!-- HEADER -->
 
@@ -37,6 +27,25 @@
 
     </div>
 
+    <div
+      class="search-icon"
+      (click)="toggleSearch()"
+    >
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <input
+      *ngIf="showSearch"
+      type="text"
+      placeholder="Search notes..."
+      [(ngModel)]="searchText"
+      class="search-input"
+    >
+
   </div>
 
   <!-- DROPDOWN -->
@@ -47,7 +56,7 @@
 
       <option>Xᵗʰ PCMB</option>
 
-<option>IXᵗʰ PCMB</option>
+      <option>IXᵗʰ PCMB</option>
 
     </select>
 
@@ -59,69 +68,19 @@
 
     <div
       class="note-card"
-      routerLink="/library-details/expansions"
+      *ngFor="let note of filteredNotes"
+      [routerLink]="note.route"
     >
 
       <div class="folder-icon">
         <i class="fa-regular fa-folder"></i>
       </div>
 
-      <h3>Expansions</h3>
+      <h3>{{ note.title }}</h3>
 
-      <p>12 Notes</p>
+      <p>{{ note.notes }}</p>
 
-      <span>2 days ago</span>
-
-    </div>
-
-    <div
-      class="note-card"
-      routerLink="/library-details/rational-numbers"
-    >
-
-      <div class="folder-icon">
-        <i class="fa-regular fa-folder"></i>
-      </div>
-
-      <h3>Rational Numbers</h3>
-
-      <p>8 Notes</p>
-
-      <span>1 week ago</span>
-
-    </div>
-
-    <div
-      class="note-card"
-      routerLink="/library-details/factorisation"
-    >
-
-      <div class="folder-icon">
-        <i class="fa-regular fa-folder"></i>
-      </div>
-
-      <h3>Factorisation</h3>
-
-      <p>15 Notes</p>
-
-      <span>Yesterday</span>
-
-    </div>
-
-    <div
-      class="note-card"
-      routerLink="/library-details/simple-algebra"
-    >
-
-      <div class="folder-icon">
-        <i class="fa-regular fa-folder"></i>
-      </div>
-
-      <h3>Simple Algebra</h3>
-
-      <p>10 Notes</p>
-
-      <span>5 days ago</span>
+      <span>{{ note.time }}</span>
 
     </div>
 
