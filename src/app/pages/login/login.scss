@@ -13,14 +13,81 @@
 
   padding:20px;
 
-  background:#faf7f7;
+  background:
+  linear-gradient(
+    135deg,
+    #fff5f5,
+    #ffe9ea,
+    #fff7f7
+  );
 
   display:flex;
 
   flex-direction:column;
 
   align-items:center;
+
+  justify-content:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  isolation:isolate;
 }
+
+/* BLUR GLOW EFFECTS */
+
+.login-page::before{
+
+  content:'';
+
+  position:absolute;
+
+  width:260px;
+
+  height:260px;
+
+  background:
+  rgba(255,90,95,0.16);
+
+  border-radius:50%;
+
+  top:-90px;
+
+  right:-90px;
+
+  filter:blur(60px);
+
+  z-index:0;
+}
+
+.login-page::after{
+
+  content:'';
+
+  position:absolute;
+
+  width:220px;
+
+  height:220px;
+
+  background:
+  rgba(255,90,95,0.12);
+
+  border-radius:50%;
+
+  bottom:-70px;
+
+  left:-70px;
+
+  filter:blur(60px);
+
+  z-index:0;
+}
+
+/* LOGO */
+
 .logo-circle{
 
   width:110px;
@@ -33,13 +100,23 @@
 
   margin:0 auto 20px;
 
-  background:white;
+  background:
+  rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(12px);
 
   display:flex;
 
   align-items:center;
 
   justify-content:center;
+
+  position:relative;
+
+  z-index:2;
+
+  box-shadow:
+  0 8px 24px rgba(255,90,95,0.10);
 }
 
 .logo-img{
@@ -50,6 +127,8 @@
 
   object-fit:cover;
 }
+
+/* TITLE */
 
 h1{
 
@@ -62,16 +141,28 @@ h1{
   color:#111;
 
   text-align:center;
+
+  position:relative;
+
+  z-index:2;
 }
 
 .subtitle{
 
   margin-top:10px;
 
-  color:#888;
+  color:#777;
 
   font-size:20px;
+
+  text-align:center;
+
+  position:relative;
+
+  z-index:2;
 }
+
+/* LOGIN CARD */
 
 .login-card{
 
@@ -81,18 +172,33 @@ h1{
 
   margin-top:40px;
 
-  background:white;
+  background:
+  rgba(255,255,255,0.72);
 
-  border-radius:30px;
+  backdrop-filter:blur(18px);
+
+  -webkit-backdrop-filter:blur(18px);
+
+  border:
+  1px solid rgba(255,255,255,0.35);
+
+  border-radius:32px;
 
   padding:35px;
 
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  box-shadow:
+  0 12px 34px rgba(255,90,95,0.10);
 
   display:flex;
 
   flex-direction:column;
+
+  position:relative;
+
+  z-index:2;
 }
+
+/* LABELS */
 
 label{
 
@@ -102,6 +208,8 @@ label{
 
   color:#333;
 }
+
+/* INPUTS */
 
 input{
 
@@ -117,8 +225,24 @@ input{
 
   outline:none;
 
-  margin-bottom: 10px;
+  margin-bottom:10px;
+
+  background:
+  rgba(255,255,255,0.75);
+
+  transition:0.3s;
 }
+
+input:focus{
+
+  border-color:#ff5b5b;
+
+  box-shadow:
+  0 0 0 4px rgba(255,91,91,0.08);
+  transform:scale(1.01);
+}
+
+/* PASSWORD */
 
 .password-field{
 
@@ -145,7 +269,11 @@ input{
   font-size:18px;
 
   line-height:1;
+
+  color: #666;
 }
+
+/* FORGOT PASSWORD */
 
 .forgot-password{
 
@@ -160,6 +288,8 @@ input{
   cursor:pointer;
 }
 
+/* BUTTON */
+
 .signin-btn{
 
   padding:18px;
@@ -168,25 +298,39 @@ input{
 
   border-radius:18px;
 
-  background:#ff5b5b;
+  background:
+  linear-gradient(
+    135deg,
+    #ff5b5b,
+    #ff7272
+  );
 
   color:white;
 
   font-size:18px;
 
-  font-weight:600;
+  font-weight:700;
 
   cursor:pointer;
 
   margin-bottom:40px;
 
   transition:0.3s;
+
+  box-shadow:
+  0 8px 20px rgba(255,91,91,0.18);
 }
 
 .signin-btn:hover{
 
-  background:#ff4343;
+  transform:
+  translateY(-2px);
+
+  box-shadow:
+  0 12px 28px rgba(255,91,91,0.22);
 }
+
+/* DIVIDER */
 
 .divider{
 
@@ -200,6 +344,8 @@ input{
 
   font-weight:600;
 }
+
+/* SOCIAL */
 
 .social-buttons{
 
@@ -216,9 +362,10 @@ input{
 
   border-radius:18px;
 
-  border:1px solid #ddd;
+  border:1px solid #eee;
 
-  background:white;
+  background:
+  rgba(255,255,255,0.82);
 
   font-size:16px;
 
@@ -233,6 +380,14 @@ input{
   align-items:center;
 
   gap:10px;
+
+  transition:0.3s;
+}
+
+.social-buttons button:hover{
+
+  transform:
+  translateY(-2px);
 }
 
 .social-buttons img{
@@ -242,6 +397,8 @@ input{
   height:20px;
 }
 
+/* SIGNUP */
+
 .signup-text{
 
   margin-top:40px;
@@ -249,6 +406,8 @@ input{
   font-size:18px;
 
   color:#444;
+
+  text-align:center;
 }
 
 .signup-text span{
@@ -260,11 +419,12 @@ input{
   cursor:pointer;
 }
 
+/* DESKTOP */
+
 @media (min-width:768px){
 
   .login-page{
 
     padding-inline:40px;
   }
-
 }

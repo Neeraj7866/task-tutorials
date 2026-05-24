@@ -1,6 +1,10 @@
 <div
   class="profile-page"
   [class.dark-page]="isDarkMode"
+
+  (touchstart)="onTouchStart($event)"
+
+  (touchend)="onTouchEnd($event)"
 >
   <!-- TOP NAVBAR -->
 

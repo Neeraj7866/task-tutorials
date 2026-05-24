@@ -19,6 +19,10 @@ import { Router } from '@angular/router';
 })
 
 export class Profile implements OnInit {
+  
+  touchStartX = 0;
+
+touchEndX = 0;
 
   constructor(
 
@@ -74,6 +78,38 @@ export class Profile implements OnInit {
     }
   }
 
+  onTouchStart(event:any){
+
+  this.touchStartX =
+  event.changedTouches[0].screenX;
+}
+
+onTouchEnd(event:any){
+
+  this.touchEndX =
+  event.changedTouches[0].screenX;
+
+  this.handleSwipe();
+}
+handleSwipe(){
+
+  const swipeDistance =
+  this.touchEndX - this.touchStartX;
+
+  /* RIGHT SWIPE */
+
+  if(swipeDistance > 80){
+
+    this.router.navigate(['/library']);
+  }
+
+  /* LEFT SWIPE */
+
+  else if(swipeDistance < -80){
+
+    this.router.navigate(['/live']);
+  }
+}
 async logout(){
 
   localStorage.setItem(

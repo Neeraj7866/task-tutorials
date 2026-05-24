@@ -1,10 +1,18 @@
-<div class="library-page">
+<div
+  class="library-page"
+
+  (touchstart)="onTouchStart($event)"
+
+  (touchend)="onTouchEnd($event)"
+>
 
   <!-- TOP NAVBAR -->
 
   <div class="top-navbar">
 
-    <i class="fa-solid fa-bars"></i>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
 
     <h2>TASK TUTORIALS</h2>
 
@@ -23,28 +31,58 @@
 
       <h1>Smart E-notes</h1>
 
-      <p>Access your comprehensive study material</p>
+      <p>
 
-    </div>
+        Access your comprehensive study material 📚
 
-    <div
-      class="search-icon"
-      (click)="toggleSearch()"
-    >
-
-      <i class="fa-solid fa-magnifying-glass"></i>
+      </p>
 
     </div>
 
     <!-- SEARCH -->
 
-    <input
-      *ngIf="showSearch"
-      type="text"
-      placeholder="Search notes..."
-      [(ngModel)]="searchText"
-      class="search-input"
-    >
+    <div class="search-wrapper">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        placeholder="Search notes..."
+        [(ngModel)]="searchText"
+        class="search-input"
+      />
+
+    </div>
+
+  </div>
+
+  <!-- CATEGORY CHIPS -->
+
+  <div class="chips-container">
+
+    <div class="chip active-chip">
+
+      All
+
+    </div>
+
+    <div class="chip">
+
+      Top
+
+    </div>
+
+    <div class="chip">
+
+      Recent
+
+    </div>
+
+    <div class="chip">
+
+      Saved
+
+    </div>
 
   </div>
 
@@ -72,15 +110,72 @@
       [routerLink]="note.route"
     >
 
-      <div class="folder-icon">
-        <i class="fa-regular fa-folder"></i>
+      <!-- BADGE -->
+
+      <div class="card-badge">
+
+        {{ note.badge }}
+
       </div>
 
-      <h3>{{ note.title }}</h3>
+      <!-- THUMBNAIL -->
 
-      <p>{{ note.notes }}</p>
+      <div class="thumbnail-section">
 
-      <span>{{ note.time }}</span>
+      </div>
+
+      <!-- ICON -->
+
+      <div class="folder-icon">
+
+        <i class="fa-regular fa-folder"></i>
+
+      </div>
+
+      <!-- TITLE -->
+
+      <h3>
+
+        {{ note.title }}
+
+      </h3>
+
+      <!-- NOTES -->
+
+      <p>
+
+        {{ note.notes }}
+
+      </p>
+
+      <!-- PROGRESS -->
+
+      <div class="progress-section">
+
+        <div class="progress-text">
+
+          Read {{ note.progress }}%
+
+        </div>
+
+        <div class="progress-bar">
+
+          <div
+            class="progress-fill"
+            [style.width.%]="note.progress"
+          ></div>
+
+        </div>
+
+      </div>
+
+      <!-- TIME -->
+
+      <span>
+
+        {{ note.time }}
+
+      </span>
 
     </div>
 

@@ -1,4 +1,10 @@
-<div class="live-page">
+<div
+  class="live-page"
+
+  (touchstart)="onTouchStart($event)"
+
+  (touchend)="onTouchEnd($event)"
+>
 
   <!-- TOP NAVBAR -->
 
@@ -88,95 +94,101 @@
 
   <!-- UPCOMING -->
 
-  <div class="upcoming-header">
+ <div class="upcoming-header">
 
-    <h2>Upcoming Classes For Today</h2>
+  <h2>
 
-                                                                
+    Upcoming Classes
 
-  </div>
+  </h2>
 
+  <button
+    class="nearest-btn"
+    (click)="sortNearest()"
+  >
+
+    Nearest
+
+  </button>
+
+</div>
   <!-- SCROLL CARDS -->
 
   <div class="scroll-container">
 
-    <!-- CARD 1 -->
+    <div
+      class="upcoming-card"
+      *ngFor="let item of upcomingClasses"
+    >
 
-    <div class="upcoming-card">
+      <!-- TIME -->
 
       <div class="time-row">
 
-        <span>14:00 PM</span>
+        <span>{{ item.time }} PM</span>
 
         <i class="fa-solid fa-flask"></i>
 
       </div>
 
-      <h3>IX<sup>th</sup> PCMB</h3>
+      <!-- TITLE -->
+
+      <h3>
+
+        IX<sup>th</sup> PCMB
+
+      </h3>
+
+      <!-- TEACHER -->
 
       <div class="teacher-row">
 
-        <img src="https://i.pravatar.cc/120" />
+        <img [src]="item.image" />
 
-        <span>Shakshi Sharma</span>
+        <span>
+
+          {{ item.teacher }}
+
+        </span>
 
       </div>
+
+      <!-- PROGRESS -->
 
       <div class="progress-bar">
 
-        <div class="progress"></div>
+        <div
+          class="progress"
+          [style.width.%]="item.progress"
+        ></div>
 
       </div>
+
+      <!-- LESSON -->
 
       <div class="lesson-row">
 
-        <span>TOPIC: GENETICS</span>
+        <span>
 
-        <span>3 / 8 LESSONS</span>
+          TOPIC: {{ item.topic }}
 
-      </div>
+        </span>
 
-      <button>Remind Me</button>
+        <span>
 
-    </div>
+          {{ item.lessons }}
 
-    <!-- CARD 2 -->
-
-    <div class="upcoming-card">
-
-      <div class="time-row">
-
-        <span>15:00 PM</span>
-
-        <i class="fa-solid fa-book"></i>
+        </span>
 
       </div>
 
-      <h3>IX<sup>th</sup> PCMB</h3>
+      <!-- BUTTON -->
 
-      <div class="teacher-row">
+      <button>
 
-        <img src="https://i.pravatar.cc/130" />
+        Remind Me
 
-        <span>Aryan Sir</span>
-
-      </div>
-
-      <div class="progress-bar">
-
-        <div class="progress second"></div>
-
-      </div>
-
-      <div class="lesson-row">
-
-        <span>TOPIC: ALGEBRA</span>
-
-        <span>5 / 10 LESSONS</span>
-
-      </div>
-
-      <button>Remind Me</button>
+      </button>
 
     </div>
 

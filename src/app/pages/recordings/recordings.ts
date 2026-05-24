@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 @Component({
@@ -29,6 +29,43 @@ import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 })
 
 export class RecordingsComponent implements OnInit {
+  constructor(private router:Router){}
+touchStartX = 0;
+
+touchEndX = 0;
+
+onTouchStart(event:any){
+
+  this.touchStartX =
+  event.changedTouches[0].screenX;
+}
+
+onTouchEnd(event:any){
+
+  this.touchEndX =
+  event.changedTouches[0].screenX;
+
+  this.handleSwipe();
+}
+handleSwipe(){
+
+  const swipeDistance =
+  this.touchEndX - this.touchStartX;
+
+  /* RIGHT SWIPE */
+
+  if(swipeDistance > 80){
+
+    this.router.navigate(['/live']);
+  }
+
+  /* LEFT SWIPE */
+
+  else if(swipeDistance < -80){
+
+    this.router.navigate(['/library']);
+  }
+}
 
   showSearch = false;
 
