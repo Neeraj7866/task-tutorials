@@ -188,7 +188,7 @@ export class Live implements OnInit {
   ngOnInit(): void {
 
     this.http.get<any[]>(
-      'http://localhost:3000/classes'
+      'https://6a13fb396c7db8aac053a101.mockapi.io/classes'
     )
     .subscribe({
 
