@@ -4,7 +4,11 @@ import { Router } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 
+import { HttpClient } from '@angular/common/http';
+
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
+
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-live',
@@ -23,7 +27,15 @@ import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 export class Live implements OnInit {
 
-  constructor(private router:Router){}
+  constructor(
+
+    private router:Router,
+
+    private http:HttpClient,
+
+    private cdr:ChangeDetectorRef
+
+  ){}
 
   /* SWIPE */
 
@@ -33,45 +45,7 @@ export class Live implements OnInit {
 
   /* UPCOMING CLASSES */
 
-  upcomingClasses = [
-
-    {
-      time:'18:00',
-      teacher:'Shakshi Sharma',
-      topic:'GENETICS',
-      lessons:'3 / 8 LESSONS',
-      progress:60,
-      image:'https://i.pravatar.cc/120?img=12'
-    },
-
-    {
-      time:'20:00',
-      teacher:'Aryan Sir',
-      topic:'ALGEBRA',
-      lessons:'5 / 10 LESSONS',
-      progress:45,
-      image:'https://i.pravatar.cc/120?img=14'
-    },
-
-    {
-      time:'17:00',
-      teacher:'Ravi Sharma',
-      topic:'PHYSICS',
-      lessons:'2 / 6 LESSONS',
-      progress:30,
-      image:'https://i.pravatar.cc/120?img=18'
-    },
-
-    {
-      time:'19:00',
-      teacher:'Megha Ma’am',
-      topic:'CHEMISTRY',
-      lessons:'7 / 9 LESSONS',
-      progress:78,
-      image:'https://i.pravatar.cc/120?img=24'
-    }
-
-  ];
+  upcomingClasses:any[] = [];
 
   /* SWIPE METHODS */
 
@@ -109,33 +83,130 @@ export class Live implements OnInit {
     }
   }
 
+  /* REAL TIME LEFT */
+
+  getTimeLeft(classTime:string){
+
+    const now = new Date();
+
+    const currentMinutes =
+
+    now.getHours() * 60
+
+    +
+
+    now.getMinutes();
+
+    const parts =
+    classTime.split(':');
+
+    const classMinutes =
+
+    parseInt(parts[0]) * 60
+
+    +
+
+    parseInt(parts[1]);
+
+    const diff =
+    classMinutes - currentMinutes;
+
+    /* CLASS STARTED */
+
+    if(diff <= 0){
+
+      return 'Live Now';
+    }
+
+    /* LESS THAN 1 HOUR */
+
+    if(diff < 60){
+
+      return `Starts In ${diff} mins`;
+    }
+
+    /* HOURS */
+
+    const hours =
+    Math.floor(diff / 60);
+
+    const mins =
+    diff % 60;
+
+    return `Starts In ${hours}h ${mins}m`;
+  }
+
   /* SORT NEAREST */
 
   sortNearest(){
 
-    const currentHour =
-    new Date().getHours();
+    const now = new Date();
 
-    this.upcomingClasses.sort((a:any,b:any)=>{
+    const currentMinutes =
 
-      const aHour =
-      parseInt(a.time);
+    now.getHours() * 60
 
-      const bHour =
-      parseInt(b.time);
+    +
+
+    now.getMinutes();
+
+    this.upcomingClasses.sort((a,b)=>{
+
+      const aParts =
+      a.time.split(':');
+
+      const bParts =
+      b.time.split(':');
+
+      const aMinutes =
+
+      parseInt(aParts[0]) * 60
+
+      +
+
+      parseInt(aParts[1]);
+
+      const bMinutes =
+
+      parseInt(bParts[0]) * 60
+
+      +
+
+      parseInt(bParts[1]);
 
       return (
 
-        Math.abs(aHour - currentHour)
+        Math.abs(aMinutes - currentMinutes)
 
         -
 
-        Math.abs(bHour - currentHour)
+        Math.abs(bMinutes - currentMinutes)
       );
     });
   }
 
   ngOnInit(): void {
+
+    this.http.get<any[]>(
+      'http://localhost:3000/classes'
+    )
+    .subscribe({
+
+      next:(data)=>{
+
+        console.log(data);
+
+        this.upcomingClasses = [...data];
+
+        this.cdr.detectChanges();
+      },
+
+      error:(err)=>{
+
+        console.log(err);
+      }
+
+    });
 
     window.scrollTo(0,0);
   }

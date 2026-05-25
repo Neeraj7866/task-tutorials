@@ -9,6 +9,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
+import {provideHttpClient}from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
 
@@ -16,7 +17,7 @@ export const appConfig: ApplicationConfig = {
 
     provideBrowserGlobalErrorListeners(),
 
-    
+    provideHttpClient(),
 
     provideRouter(routes),
 

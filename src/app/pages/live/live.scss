@@ -445,37 +445,6 @@
   color:gray;
 }
 
-/* PROGRESS */
-
-.progress-bar{
-
-  width:100%;
-
-  height:6px;
-
-  background:#f1f1f1;
-
-  border-radius:20px;
-
-  margin-top:16px;
-
-  overflow:hidden;
-}
-
-.progress{
-
-  height:100%;
-
-  background:
-  linear-gradient(
-    90deg,
-    #ff5a5f,
-    #ff8c8f
-  );
-
-  border-radius:20px;
-}
-
 /* LESSON */
 
 .lesson-row{
@@ -492,6 +461,16 @@
 
   font-weight:700;
 }
+/* STARTS IN */
+
+.starts-in{
+
+  color:#ff5a5f;
+
+  font-weight:800;
+
+  font-size:11px;
+}
 
 /* BUTTON */
 
@@ -507,8 +486,12 @@
 
   border-radius:14px;
 
-  background:#fff0f1;
-
+  background:
+linear-gradient(
+  135deg,
+  #fff0f1,
+  #ffe5e7
+);
   color:#ff5a5f;
 
   font-weight:800;
