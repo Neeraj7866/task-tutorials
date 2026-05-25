@@ -63,25 +63,18 @@ export class Live implements OnInit {
     this.handleSwipe();
   }
 
-  handleSwipe(){
+ handleSwipe(){
 
-    const swipeDistance =
-    this.touchEndX - this.touchStartX;
+  const swipeDistance =
+  this.touchEndX - this.touchStartX;
 
-    /* RIGHT SWIPE */
+  /* RIGHT SWIPE */
 
-    if(swipeDistance > 80){
+  if(swipeDistance > 80){
 
-      this.router.navigate(['/profile']);
-    }
-
-    /* LEFT SWIPE */
-
-    else if(swipeDistance < -80){
-
-      this.router.navigate(['/recordings']);
-    }
+    this.router.navigate(['/profile']);
   }
+}
 
   /* REAL TIME LEFT */
 
