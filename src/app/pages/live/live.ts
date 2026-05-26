@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router';
-
 import { CommonModule } from '@angular/common';
 
 import { HttpClient } from '@angular/common/http';
@@ -29,106 +27,81 @@ export class Live implements OnInit {
 
   constructor(
 
-    private router:Router,
-
     private http:HttpClient,
 
     private cdr:ChangeDetectorRef
 
   ){}
 
-  /* SWIPE */
-
-  touchStartX = 0;
-
-  touchEndX = 0;
-
+ 
   /* UPCOMING CLASSES */
 
   upcomingClasses:any[] = [];
 
-  /* SWIPE METHODS */
 
-  onTouchStart(event:any){
 
-    this.touchStartX =
-    event.changedTouches[0].screenX;
-  }
 
-  onTouchEnd(event:any){
 
-    this.touchEndX =
-    event.changedTouches[0].screenX;
-
-    this.handleSwipe();
-  }
-
- handleSwipe(){
-
-  const swipeDistance =
-  this.touchEndX - this.touchStartX;
-
-  /* RIGHT SWIPE */
-
-  if(swipeDistance > 80){
-
-    this.router.navigate(['/profile']);
-  }
-}
 
   /* REAL TIME LEFT */
 
-  getTimeLeft(classTime:string){
+getTimeLeft(classTime:string){
 
-    const now = new Date();
+  const now = new Date();
 
-    const currentMinutes =
+  const currentMinutes =
 
-    now.getHours() * 60
+  now.getHours() * 60
 
-    +
+  +
 
-    now.getMinutes();
+  now.getMinutes();
 
-    const parts =
-    classTime.split(':');
+  const parts =
+  classTime.split(':');
 
-    const classMinutes =
+  const classMinutes =
 
-    parseInt(parts[0]) * 60
+  parseInt(parts[0]) * 60
 
-    +
+  +
 
-    parseInt(parts[1]);
+  parseInt(parts[1]);
 
-    const diff =
-    classMinutes - currentMinutes;
+  const diff =
+  classMinutes - currentMinutes;
 
-    /* CLASS STARTED */
+  /* LIVE FOR 1 HOUR */
 
-    if(diff <= 0){
+  if(diff <= 0 && diff >= -60){
 
-      return 'Live Now';
-    }
-
-    /* LESS THAN 1 HOUR */
-
-    if(diff < 60){
-
-      return `Starts In ${diff} mins`;
-    }
-
-    /* HOURS */
-
-    const hours =
-    Math.floor(diff / 60);
-
-    const mins =
-    diff % 60;
-
-    return `Starts In ${hours}h ${mins}m`;
+    return 'Live Now';
   }
 
+  /* CLASS ENDED */
+
+  if(diff < -60){
+
+    return 'Class Ended';
+  }
+
+  /* LESS THAN 1 HOUR */
+
+  if(diff < 60){
+
+    return `Starts In ${diff} mins`;
+  }
+
+  /* HOURS */
+
+  const hours =
+  Math.floor(diff / 60);
+
+  const mins =
+  diff % 60;
+
+  return `Starts In ${hours}h ${mins}m`;
+}
   /* SORT NEAREST */
 
   sortNearest(){
