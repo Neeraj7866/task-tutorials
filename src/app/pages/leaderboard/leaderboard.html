@@ -1,1 +1,487 @@
-<p>leaderboard works!</p>
+<div class="leaderboard-page">
+
+  <!-- TOP HEADER -->
+
+  <div class="top-header">
+
+    <h2>
+
+      🔥 Activity Leaderboard
+
+    </h2>
+
+  </div>
+
+  <!-- SUBTITLE -->
+
+  <p class="sub-text">
+
+    Your daily consistency rank
+
+  </p>
+
+  <!-- TOP PODIUM -->
+
+  <div class="podium-section">
+
+    <!-- SECOND -->
+
+    <div class="podium-card small">
+
+<div class="crown bronze">
+
+  👑
+
+</div>
+
+      <img
+        [src]="topStudents[0].image"
+      />
+
+      <div class="podium-badge">
+
+  #2
+
+</div>
+
+      <h3>
+
+        {{ topStudents[0].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        <span class="material-icons star-icon">
+
+          stars
+
+        </span>
+
+        {{ topStudents[0].xp }} XP
+
+      </span>
+
+      <p>
+
+        <span class="material-icons fire-icon">
+
+          local_fire_department
+
+        </span>
+
+        {{ topStudents[0].streak }} Day Streak
+
+      </p>
+
+    </div>
+
+    <!-- FIRST -->
+
+    <div class="podium-card main">
+
+ <div class="crown bronze">
+
+  👑
+
+</div>
+
+      <img
+        [src]="topStudents[1].image"
+      />
+
+      <div class="podium-badge">
+
+  #1
+
+</div>
+
+      <h3>
+
+        {{ topStudents[1].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        <span class="material-icons star-icon">
+
+          stars
+
+        </span>
+
+        {{ topStudents[1].xp }} XP
+
+      </span>
+
+      <p>
+
+        <span class="material-icons fire-icon">
+
+          local_fire_department
+
+        </span>
+
+        {{ topStudents[1].streak }} Day Streak
+
+      </p>
+
+    </div>
+
+    <!-- THIRD -->
+
+    <div class="podium-card small">
+
+<div class="crown bronze">
+
+  👑
+
+</div>
+
+
+      <img
+        [src]="topStudents[2].image"
+      />
+      <div class="podium-badge">
+
+  #3
+
+</div>
+
+      <h3>
+
+        {{ topStudents[2].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        <span class="material-icons star-icon">
+
+          stars
+
+        </span>
+
+        {{ topStudents[2].xp }} XP
+
+      </span>
+
+      <p>
+
+        <span class="material-icons fire-icon">
+
+          local_fire_department
+
+        </span>
+
+        {{ topStudents[2].streak }} Day Streak
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- YOUR RANK -->
+
+  <div class="rank-card">
+
+    <div class="rank-left">
+
+      <div class="rank-box">
+
+        <h2>
+
+          27
+
+        </h2>
+
+        <span class="material-icons medal-icon">
+
+          military_tech
+
+        </span>
+
+      </div>
+
+      <div>
+
+        <h3>
+
+          Your Rank
+
+        </h3>
+
+      </div>
+
+    </div>
+
+    <div class="rank-stats">
+
+      <div>
+
+        <h2>
+
+          18
+
+          <span class="material-icons fire-icon">
+
+            local_fire_department
+
+          </span>
+
+        </h2>
+
+        <p>
+
+          Day Streak
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          91%
+
+        </h2>
+
+        <p>
+
+          Attendance
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          <span class="material-icons trophy-icon">
+
+            emoji_events
+
+          </span>
+
+          1820
+
+        </h2>
+
+        <p>
+
+          Total XP
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- STUDENTS -->
+
+  <div class="section-title">
+
+    <h2>
+
+      Students Near You
+
+    </h2>
+
+  </div>
+
+  <div class="students-card">
+
+    <div
+      class="student-row"
+
+      [class.current-user]="item.current"
+
+      *ngFor="let item of nearbyStudents"
+    >
+
+      <div class="student-left">
+
+        <span class="rank-number">
+
+          {{ item.rank }}
+
+        </span>
+
+        <img
+          [src]="item.image"
+        />
+
+        <h4>
+
+          {{ item.name }}
+
+        </h4>
+
+      </div>
+
+      <div class="student-right">
+
+        <span>
+
+          <span class="material-icons fire-icon small-icon">
+
+            local_fire_department
+
+          </span>
+
+          {{ item.streak }}
+
+        </span>
+
+        <span>
+
+          {{ item.attendance }}%
+
+        </span>
+
+        <span>
+
+          <span class="material-icons star-icon small-icon">
+
+            stars
+
+          </span>
+
+          {{ item.xp }}
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BADGES -->
+
+  <div class="section-title">
+
+    <h2>
+
+      Your Achievements
+
+    </h2>
+
+  </div>
+
+  <div class="badges-grid">
+
+    <div
+      class="badge-card"
+
+      *ngFor="let item of badges"
+    >
+
+      <div class="badge-icon">
+
+        {{ item.icon }}
+
+      </div>
+
+      <h4>
+
+        {{ item.title }}
+
+      </h4>
+
+      <p>
+
+        {{ item.subtitle }}
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- PERFORMANCE -->
+
+  <!-- <div class="section-title">
+
+    <h2>
+
+      Performance Overview
+
+    </h2>
+
+  </div>
+
+  <div class="performance-grid">
+
+    <div class="performance-card">
+
+      <p>
+
+        Study Hours
+
+      </p>
+
+      <h2>
+
+        12.5 hrs
+
+      </h2>
+
+    </div>
+
+    <div class="performance-card">
+
+      <p>
+
+        Classes Attended
+
+      </p>
+
+      <h2>
+
+        14 / 16
+
+      </h2>
+
+    </div>
+
+    <div class="performance-card">
+
+      <p>
+
+        Quiz Accuracy
+
+      </p>
+
+      <h2>
+
+        92%
+
+      </h2>
+
+    </div>
+
+    <div class="performance-card">
+
+      <p>
+
+        Notes Read
+
+      </p>
+
+      <h2>
+
+        28
+
+      </h2>
+
+    </div>
+
+  </div> -->
+
+</div>

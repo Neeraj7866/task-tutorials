@@ -1,3 +1,8 @@
+<app-sidebar
+  [sidebarOpen]="sidebarOpen"
+></app-sidebar>
+
+
 <div
   class="library-page"
 
@@ -8,9 +13,12 @@
 
   <!-- TOP NAVBAR -->
 
+  <!-- TOP NAVBAR -->
+
   <div class="top-navbar">
 
-    <div class="menu-icon">
+    <div class="menu-icon"
+     (click)="toggleSidebar()">
       <i class="fa-solid fa-bars"></i>
     </div>
 

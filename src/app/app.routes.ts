@@ -7,8 +7,16 @@ import { RecordingsComponent } from './pages/recordings/recordings';
 import { Profile } from './pages/profile/profile';
 import { RecordingDetails } from './pages/recording-details/recording-details';
 import { LibraryDetails } from './pages/library-details/library-details';
+import { Leaderboard }from './pages/leaderboard/leaderboard';
+// import { AcademicLeaderboard }
+// from './pages/academic-leaderboard/academic-leaderboard';
 
 export const routes: Routes = [
+
+//   {
+//   path:'academic-leaderboard',
+//   component: AcademicLeaderboard
+// },
 
   {
   path:'library-details/:subject',
@@ -55,8 +63,12 @@ export const routes: Routes = [
     path: 'profile',
     component: Profile
   },
-  {
-  path:'**',
-  redirectTo:'live'
+//   {
+//   path:'**',
+//   redirectTo:'live'
+// },
+{
+  path:'leaderboard',
+  component:Leaderboard
 }
 ];

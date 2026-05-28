@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 import { ChangeDetectorRef } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { SidebarComponent }from '../../shared/components/sidebar/sidebar';
 @Component({
   selector: 'app-live',
 
@@ -15,7 +16,8 @@ import { ChangeDetectorRef } from '@angular/core';
 
   imports:[
     BottomNav,
-    CommonModule
+    CommonModule,
+    RouterModule,SidebarComponent
   ],
 
   templateUrl: './live.html',
@@ -38,7 +40,14 @@ export class Live implements OnInit {
 
   upcomingClasses:any[] = [];
 
+  sidebarOpen = false;
 
+toggleSidebar(){
+
+  this.sidebarOpen =
+  !this.sidebarOpen;
+}
+  
 
 
 
@@ -153,6 +162,7 @@ getTimeLeft(classTime:string){
 
   ngOnInit(): void {
 
+
     this.http.get<any[]>(
       'https://6a13fb396c7db8aac053a101.mockapi.io/classes'
     )
@@ -176,4 +186,6 @@ getTimeLeft(classTime:string){
 
     window.scrollTo(0,0);
   }
+
+
 }

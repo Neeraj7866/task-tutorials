@@ -1,238 +1,289 @@
- <div class="live-page">
+<app-sidebar
+  [sidebarOpen]="sidebarOpen"
+></app-sidebar>
 
-    <!-- TOP NAVBAR -->
 
-    <div class="top-navbar">
+<!-- MAIN PAGE -->
 
-      <div class="menu-icon">
-        <i class="fa-solid fa-bars"></i>
+<div class="live-page">
+
+  <!-- TOP NAVBAR -->
+
+  <div class="top-navbar">
+
+    <div
+      class="menu-icon"
+      (click)="toggleSidebar()"
+    >
+
+      <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+    <h2>
+
+      TASK TUTORIALS
+
+    </h2>
+
+    <img
+      src="https://i.pravatar.cc/100"
+      class="nav-profile"
+    />
+
+  </div>
+
+  <!-- LIVE HERO CARD -->
+
+  <div class="live-card">
+
+    <div class="live-status">
+
+      <span class="dot"></span>
+
+      <span>ACTIVE NOW</span>
+
+    </div>
+
+    <div class="live-header">
+
+      <h1>
+
+        X<sup>th</sup> PCMB
+
+      </h1>
+
+      <div class="mic-icon">
+
+        <i class="fa-solid fa-microphone"></i>
+
       </div>
 
-      <h2>TASK TUTORIALS</h2>
+    </div>
+
+    <div class="teacher-info">
 
       <img
-        src="https://i.pravatar.cc/100"
-        class="nav-profile"
+        src="https://i.pravatar.cc/150"
+        class="teacher-image"
       />
 
-    </div>
-
-    <!-- LIVE HERO CARD -->
-
-    <div class="live-card">
-
-      <div class="live-status">
-
-        <span class="dot"></span>
-
-        <span>ACTIVE NOW</span>
-
-      </div>
-
-      <div class="live-header">
-
-        <h1>X<sup>th</sup> PCMB</h1>
-
-        <div class="mic-icon">
-          <i class="fa-solid fa-microphone"></i>
-        </div>
-
-      </div>
-
-      <div class="teacher-info">
-
-        <img
-          src="https://i.pravatar.cc/150"
-          class="teacher-image"
-        />
-
-        <div>
-
-          <h3>Mr. Ravi Sharma</h3>
-
-          <p>Expert Physics & Math Tutor</p>
-
-        </div>
-
-      </div>
-
-      <div class="live-details">
-
-        <div class="detail-box">
-
-          <i class="fa-regular fa-clock"></i>
-
-          <span>12:00 - 13:00</span>
-
-        </div>
-
-        <div class="detail-box">
-
-          <i class="fa-solid fa-book-open"></i>
-
-          <span>L4 / 12</span>
-
-        </div>
-
-      </div>
-
-      <button class="join-btn">
-
-        <i class="fa-brands fa-youtube"></i>
-
-        JOIN CLASSROOM
-
-      </button>
-
-    </div>
-
-    <!-- UPCOMING -->
-
-    <div class="upcoming-header">
-
-      <h2>
-
-        Upcoming Classes
-
-      </h2>
-
-      <button
-        class="nearest-btn"
-        (click)="sortNearest()"
-      >
-
-        Nearest
-
-      </button>
-
-    </div>
-
-    <!-- SCROLL CARDS -->
-
-    @if(upcomingClasses.length > 0){
-
-    <div class="scroll-container">
-
-      <div
-        class="upcoming-card"
-
-        *ngFor="let item of upcomingClasses"
-      >
-
-        <!-- TIME -->
-
-        <div class="time-row">
-
-          <span>
-
-            {{ item.time }}
-
-          </span>
-
-          <i class="fa-solid fa-flask"></i>
-
-        </div>
-
-        <!-- TITLE -->
+      <div>
 
         <h3>
 
-          {{ item.title }}
+          Mr. Ravi Sharma
 
         </h3>
 
-        <!-- TEACHER -->
+        <p>
 
-        <div class="teacher-row">
+          Expert Physics & Math Tutor
 
-          <img
-            [src]="item.image"
-          />
-
-          <span>
-
-            {{ item.teacher }}
-
-          </span>
-
-        </div>
-
-        <!-- STATUS -->
-
-        <div class="lesson-row">
-
-    <span>
-
-      TOPIC:
-      {{ item.topic }}
-
-    </span>
-
-    <span>
-
-      {{ item.lessons }}
-
-    </span>
-
-  </div>
-
-  <div class="starts-in">
-
-    {{ getTimeLeft(item.time) }}
-
-  </div>
-
-        <!-- BUTTON -->
-
-        <button>
-
-          Remind Me
-
-        </button>
+        </p>
 
       </div>
 
     </div>
 
-    }
+    <div class="live-details">
 
-    <!-- STATS -->
+      <div class="detail-box">
 
-    <div class="stats-grid">
+        <i class="fa-regular fa-clock"></i>
 
-      <div class="stat-card">
+        <span>
 
-        <div class="stat-icon red">
+          12:00 - 13:00
 
-          <i class="fa-solid fa-location-dot"></i>
-
-        </div>
-
-        <div>
-
-          <h2>12</h2>
-
-          <p>DAY STREAK</p>
-
-        </div>
+        </span>
 
       </div>
 
-      <div class="stat-card">
+      <div class="detail-box">
 
-        <div class="stat-icon green">
+        <i class="fa-solid fa-book-open"></i>
 
-          <i class="fa-solid fa-shield"></i>
+        <span>
 
-        </div>
+          L4 / 12
 
-        <div>
+        </span>
 
-          <h2>85%</h2>
+      </div>
 
-          <p>ACCURACY</p>
+    </div>
 
-        </div>
+    <button class="join-btn">
+
+      <i class="fa-brands fa-youtube"></i>
+
+      JOIN CLASSROOM
+
+    </button>
+
+  </div>
+
+  <!-- UPCOMING -->
+
+  <div class="upcoming-header">
+
+    <h2>
+
+      Upcoming Classes
+
+    </h2>
+
+    <button
+      class="nearest-btn"
+      (click)="sortNearest()"
+    >
+
+      Nearest
+
+    </button>
+
+  </div>
+
+  <!-- SCROLL CARDS -->
+
+  @if(upcomingClasses.length > 0){
+
+  <div class="scroll-container">
+
+    <div
+      class="upcoming-card"
+      *ngFor="let item of upcomingClasses"
+    >
+
+      <!-- TIME -->
+
+      <div class="time-row">
+
+        <span>
+
+          {{ item.time }}
+
+        </span>
+
+        <i class="fa-solid fa-flask"></i>
+
+      </div>
+
+      <!-- TITLE -->
+
+      <h3>
+
+        {{ item.title }}
+
+      </h3>
+
+      <!-- TEACHER -->
+
+      <div class="teacher-row">
+
+        <img
+          [src]="item.image"
+        />
+
+        <span>
+
+          {{ item.teacher }}
+
+        </span>
+
+      </div>
+
+      <!-- STATUS -->
+
+      <div class="lesson-row">
+
+        <span>
+
+          TOPIC:
+          {{ item.topic }}
+
+        </span>
+
+        <span>
+
+          {{ item.lessons }}
+
+        </span>
+
+      </div>
+
+      <div class="starts-in">
+
+        {{ getTimeLeft(item.time) }}
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button>
+
+        Remind Me
+
+      </button>
+
+    </div>
+
+  </div>
+
+  }
+
+  <!-- STATS -->
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <div class="stat-icon red">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          12
+
+        </h2>
+
+        <p>
+
+          DAY STREAK
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon green">
+
+        <i class="fa-solid fa-shield"></i>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          85%
+
+        </h2>
+
+        <p>
+
+          ACCURACY
+
+        </p>
 
       </div>
 
@@ -240,4 +291,8 @@
 
   </div>
 
-  <app-bottom-nav></app-bottom-nav>
+</div>
+
+<!-- BOTTOM NAV -->
+
+<app-bottom-nav></app-bottom-nav>

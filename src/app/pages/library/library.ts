@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
-
 import { RouterLink } from '@angular/router';
-
 import { FormsModule } from '@angular/forms';
-
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SidebarComponent }from '../../shared/components/sidebar/sidebar';
 
 @Component({
   selector: 'app-library',
@@ -17,8 +16,8 @@ import { Router } from '@angular/router';
   imports:[
     BottomNav,
     RouterLink,
-    FormsModule,
-    CommonModule
+    FormsModule,SidebarComponent,
+    CommonModule,RouterModule
   ],
 
   templateUrl: './library.html',
@@ -28,6 +27,16 @@ import { Router } from '@angular/router';
 
 export class Library implements OnInit {
   constructor(private router:Router){}
+
+  
+  sidebarOpen = false;
+
+toggleSidebar(){
+
+  this.sidebarOpen =
+  !this.sidebarOpen;
+}
+  
 touchStartX = 0;
 
 touchEndX = 0;

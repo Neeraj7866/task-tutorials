@@ -5,13 +5,16 @@ import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 import { Auth, signOut } from '@angular/fire/auth';
 
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SidebarComponent }from '../../shared/components/sidebar/sidebar';
+
 
 @Component({
   selector: 'app-profile',
 
   standalone:true,
 
-  imports:[BottomNav],
+  imports:[BottomNav,RouterModule,SidebarComponent],
 
   templateUrl: './profile.html',
 
@@ -31,6 +34,16 @@ touchEndX = 0;
     private router:Router
 
   ){}
+
+  
+  sidebarOpen = false;
+
+toggleSidebar(){
+
+  this.sidebarOpen =
+  !this.sidebarOpen;
+}
+  
 
   isDarkMode = false;
 

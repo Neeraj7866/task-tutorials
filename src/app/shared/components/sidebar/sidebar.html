@@ -1,0 +1,83 @@
+<!-- SIDEBAR OVERLAY -->
+
+<div
+  class="sidebar-overlay"
+  *ngIf="sidebarOpen"
+  (click)="toggleSidebar()"
+>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div
+  class="sidebar"
+  [class.show-sidebar]="sidebarOpen"
+>
+
+  <!-- TOP -->
+
+  <div class="sidebar-top">
+
+    <img
+      src="tt logo.png"
+      class="sidebar-logo"
+    />
+
+    <h2>
+
+      TASK TUTORIALS
+
+    </h2>
+
+  </div>
+
+  <!-- ITEMS -->
+
+  <div
+    class="sidebar-item"
+    routerLink="/live"
+    (click)="toggleSidebar()"
+  >
+
+    📺 Live Classes
+
+  </div>
+
+  <div
+    class="sidebar-item"
+    routerLink="/leaderboard"
+    (click)="toggleSidebar()"
+  >
+
+    🏆 Leaderboard
+
+  </div>
+
+  <div
+    class="sidebar-item"
+    routerLink="/library"
+    (click)="toggleSidebar()"
+  >
+
+    📚 Notes
+
+  </div>
+
+  <div
+    class="sidebar-item"
+    routerLink="/profile"
+    (click)="toggleSidebar()"
+  >
+
+    👤 Profile
+
+  </div>
+
+  <div class="sidebar-item">
+
+    ℹ About Us
+
+  </div>
+
+</div>

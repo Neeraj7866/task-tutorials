@@ -1,27 +1,18 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
 import { RouterLink } from '@angular/router';
-
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
+import { SidebarComponent }from '../../shared/components/sidebar/sidebar';
 
 @Component({
   selector: 'app-recordings',
 
   standalone:true,
 
-  imports:[
-    BottomNav,
-    RouterLink,
-    CommonModule,
-    FormsModule
-  ],
+  imports:[BottomNav,RouterLink,CommonModule,FormsModule,RouterModule,SidebarComponent],
 
   templateUrl:'./recordings.html',
 
@@ -30,6 +21,16 @@ import { BottomNav } from '../../shared/components/bottom-nav/bottom-nav';
 
 export class RecordingsComponent implements OnInit {
   constructor(private router:Router){}
+
+  
+  sidebarOpen = false;
+
+toggleSidebar(){
+
+  this.sidebarOpen =
+  !this.sidebarOpen;
+}
+  
 touchStartX = 0;
 
 touchEndX = 0;
