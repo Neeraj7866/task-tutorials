@@ -53,6 +53,62 @@
   font-size:14px;
 }
 
+/* TOGGLE */
+
+.leaderboard-toggle{
+
+  margin-top:24px;
+
+  display:flex;
+
+  gap:12px;
+
+  background:
+  rgba(255,255,255,0.72);
+
+  padding:8px;
+
+  border-radius:22px;
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 8px 24px rgba(0,0,0,0.05);
+}
+
+.leaderboard-toggle button{
+
+  flex:1;
+
+  border:none;
+
+  background:transparent;
+
+  padding:14px;
+
+  border-radius:16px;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  color:#666;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.active-toggle{
+
+  background:#ff5b5b !important;
+
+  color:white !important;
+
+  box-shadow:
+  0 6px 18px rgba(255,91,91,0.24);
+}
+
 /* PODIUM */
 
 .podium-section{
@@ -375,7 +431,7 @@
 
 .section-title{
 
-  margin-top:10px;
+  margin-top:46px;
 
   margin-bottom:16px;
 
@@ -387,7 +443,6 @@
 }
 
 .section-title h2{
-  font-style: normal;
 
   font-size:22px;
 
@@ -438,6 +493,7 @@
 
   border-left:5px solid #ff5b5b;
 }
+
 .current-user h4{
 
   color:#ff4d6d;
@@ -478,7 +534,8 @@
 .student-left h4{
 
   font-size:15px;
-  font-weight: 400;
+
+  font-weight:400;
 }
 
 .student-right{
@@ -566,7 +623,8 @@
 .badge-card h4{
 
   font-size:15px;
-  font-weight: 500;
+
+  font-weight:500;
 
   margin-bottom:8px;
 }
@@ -621,6 +679,58 @@
   font-size:26px;
 }
 
+/* PAGINATION */
+
+.pagination-box{
+
+  margin-top:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.pagination-box button{
+
+  border:none;
+
+  background:#ff5b5b;
+
+  color:white;
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.pagination-box button:disabled{
+
+  opacity:0.45;
+
+  cursor:not-allowed;
+}
+
+.pagination-box span{
+
+  font-size:14px;
+
+  font-weight:600;
+
+  color:#666;
+}
+
 /* DESKTOP */
 
 @media(min-width:1024px){
@@ -629,8 +739,6 @@
 
     padding:30px 44px;
   }
-
-  /* HEADER */
 
   .top-header h2{
 
@@ -644,7 +752,10 @@
     margin-top:10px;
   }
 
-  /* PODIUM */
+  .leaderboard-toggle{
+
+    width:420px;
+  }
 
   .podium-section{
 
@@ -691,9 +802,6 @@
     font-size:12px;
 
     border:3px solid white;
-
-    box-shadow:
-    0 6px 16px rgba(255,91,91,0.22);
   }
 
   .podium-card h3{
@@ -701,22 +809,16 @@
     font-size:18px;
 
     margin-top:16px;
-
-    line-height:1.35;
   }
 
   .xp{
 
     font-size:17px;
-
-    margin-top:12px;
   }
 
   .podium-card p{
 
     font-size:14px;
-
-    margin-top:12px;
   }
 
   .crown{
@@ -725,8 +827,6 @@
 
     top:-22px;
   }
-
-  /* RANK CARD */
 
   .rank-card{
 
@@ -753,8 +853,6 @@
     width:92px;
 
     height:92px;
-
-    border-radius:24px;
   }
 
   .rank-box h2{
@@ -780,25 +878,7 @@
   .rank-stats p{
 
     font-size:13px;
-
-    margin-top:6px;
   }
-
-  /* TITLES */
-
-  .section-title{
-
-    margin-top:46px;
-
-    margin-bottom:18px;
-  }
-
-  .section-title h2{
-
-    font-size:24px;
-  }
-
-  /* STUDENTS */
 
   .students-card{
 
@@ -808,11 +888,6 @@
   .student-row{
 
     padding:20px 24px;
-  }
-
-  .student-left{
-
-    gap:16px;
   }
 
   .student-left img{
@@ -841,8 +916,6 @@
     font-size:16px;
   }
 
-  /* BADGES GRID */
-
   .badges-grid{
 
     display:grid;
@@ -862,31 +935,6 @@
     padding:22px;
   }
 
-  .badge-icon{
-
-    width:62px;
-
-    height:62px;
-
-    font-size:28px;
-
-    border-radius:18px;
-  }
-
-  .badge-card h4{
-
-    font-size:16px;
-
-    margin-top:12px;
-  }
-
-  .badge-card p{
-
-    font-size:13px;
-  }
-
-  /* PERFORMANCE */
-
   .performance-grid{
 
     grid-template-columns:
@@ -900,16 +948,31 @@
     padding:22px;
   }
 
-  .performance-card p{
-
-    font-size:14px;
-  }
-
   .performance-card h2{
 
     font-size:26px;
+  }
+}
 
-    margin-top:12px;
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .pagination-box{
+
+    flex-direction:column;
+
+    align-items:stretch;
+  }
+
+  .pagination-box button{
+
+    width:100%;
+  }
+
+  .pagination-box span{
+
+    text-align:center;
   }
 }
 

@@ -6,7 +6,7 @@
 
     <h2>
 
-      🔥 Activity Leaderboard
+      🔥 Leaderboards
 
     </h2>
 
@@ -16,9 +16,37 @@
 
   <p class="sub-text">
 
-    Your daily consistency rank
+    Track your academic and activity performance
 
   </p>
+
+  <!-- TOGGLE -->
+
+  <div class="leaderboard-toggle">
+
+    <button
+      [class.active-toggle]="selectedBoard === 'activity'"
+      (click)="selectedBoard = 'activity'"
+    >
+
+      Activity
+
+    </button>
+
+    <button
+      [class.active-toggle]="selectedBoard === 'academic'"
+      (click)="selectedBoard = 'academic'"
+    >
+
+      Academic
+
+    </button>
+
+  </div>
+
+  <!-- ACTIVITY LEADERBOARD -->
+
+  @if(selectedBoard === 'activity'){
 
   <!-- TOP PODIUM -->
 
@@ -28,11 +56,11 @@
 
     <div class="podium-card small">
 
-<div class="crown bronze">
+      <div class="crown bronze">
 
-  👑
+        👑
 
-</div>
+      </div>
 
       <img
         [src]="topStudents[0].image"
@@ -40,9 +68,9 @@
 
       <div class="podium-badge">
 
-  #2
+        #2
 
-</div>
+      </div>
 
       <h3>
 
@@ -80,11 +108,11 @@
 
     <div class="podium-card main">
 
- <div class="crown bronze">
+      <div class="crown bronze">
 
-  👑
+        👑
 
-</div>
+      </div>
 
       <img
         [src]="topStudents[1].image"
@@ -92,9 +120,9 @@
 
       <div class="podium-badge">
 
-  #1
+        #1
 
-</div>
+      </div>
 
       <h3>
 
@@ -132,21 +160,21 @@
 
     <div class="podium-card small">
 
-<div class="crown bronze">
+      <div class="crown bronze">
 
-  👑
+        👑
 
-</div>
-
+      </div>
 
       <img
         [src]="topStudents[2].image"
       />
+
       <div class="podium-badge">
 
-  #3
+        #3
 
-</div>
+      </div>
 
       <h3>
 
@@ -282,13 +310,274 @@
 
   </div>
 
-  <!-- STUDENTS -->
+  <!-- BADGES -->
 
   <div class="section-title">
 
     <h2>
 
-      Students Near You
+      Your Achievements
+
+    </h2>
+
+  </div>
+
+  <div class="badges-grid">
+
+    <div
+      class="badge-card"
+      *ngFor="let item of badges"
+    >
+
+      <div class="badge-icon">
+
+        {{ item.icon }}
+
+      </div>
+
+      <h4>
+
+        {{ item.title }}
+
+      </h4>
+
+      <p>
+
+        {{ item.subtitle }}
+
+      </p>
+
+    </div>
+
+  </div>
+
+  }
+
+  <!-- ACADEMIC LEADERBOARD -->
+
+  @if(selectedBoard === 'academic'){
+
+  <!-- PODIUM -->
+
+  <div class="podium-section">
+
+    <!-- SECOND -->
+
+    <div class="podium-card small">
+
+      <div class="crown bronze">
+
+        👑
+
+      </div>
+
+      <img
+        [src]="academicTopStudents[0].image"
+      />
+
+      <div class="podium-badge">
+
+        #2
+
+      </div>
+
+      <h3>
+
+        {{ academicTopStudents[0].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        {{ academicTopStudents[0].percentage }}
+
+      </span>
+
+      <p>
+
+        {{ academicTopStudents[0].subject }}
+
+      </p>
+
+    </div>
+
+    <!-- FIRST -->
+
+    <div class="podium-card main">
+
+      <div class="crown bronze">
+
+        👑
+
+      </div>
+
+      <img
+        [src]="academicTopStudents[1].image"
+      />
+
+      <div class="podium-badge">
+
+        #1
+
+      </div>
+
+      <h3>
+
+        {{ academicTopStudents[1].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        {{ academicTopStudents[1].percentage }}
+
+      </span>
+
+      <p>
+
+        {{ academicTopStudents[1].subject }}
+
+      </p>
+
+    </div>
+
+    <!-- THIRD -->
+
+    <div class="podium-card small">
+
+      <div class="crown bronze">
+
+        👑
+
+      </div>
+
+      <img
+        [src]="academicTopStudents[2].image"
+      />
+
+      <div class="podium-badge">
+
+        #3
+
+      </div>
+
+      <h3>
+
+        {{ academicTopStudents[2].name }}
+
+      </h3>
+
+      <span class="xp">
+
+        {{ academicTopStudents[2].percentage }}
+
+      </span>
+
+      <p>
+
+        {{ academicTopStudents[2].subject }}
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- YOUR RANK -->
+
+  <div class="rank-card">
+
+    <div class="rank-left">
+
+      <div class="rank-box">
+
+        <h2>
+
+          23
+
+        </h2>
+
+        <span class="material-icons medal-icon">
+
+          military_tech
+
+        </span>
+
+      </div>
+
+      <div>
+
+        <h3>
+
+          Your Rank
+
+        </h3>
+
+      </div>
+
+    </div>
+
+    <div class="rank-stats">
+
+      <div>
+
+        <h2>
+
+          96%
+
+        </h2>
+
+        <p>
+
+          Avg Score
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          24
+
+        </h2>
+
+        <p>
+
+          Tests Given
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <h2>
+
+          3
+
+        </h2>
+
+        <p>
+
+          Top Finishes
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- OVERALL RANKINGS -->
+
+  <div class="section-title">
+
+    <h2>
+
+      Overall Rankings
 
     </h2>
 
@@ -298,10 +587,8 @@
 
     <div
       class="student-row"
-
       [class.current-user]="item.current"
-
-      *ngFor="let item of nearbyStudents"
+      *ngFor="let item of paginatedStudents"
     >
 
       <div class="student-left">
@@ -328,31 +615,19 @@
 
         <span>
 
-          <span class="material-icons fire-icon small-icon">
-
-            local_fire_department
-
-          </span>
-
-          {{ item.streak }}
+          {{ item.score }}
 
         </span>
 
         <span>
 
-          {{ item.attendance }}%
+          {{ item.tests }} Tests
 
         </span>
 
         <span>
 
-          <span class="material-icons star-icon small-icon">
-
-            stars
-
-          </span>
-
-          {{ item.xp }}
+          {{ item.avg }}
 
         </span>
 
@@ -362,51 +637,39 @@
 
   </div>
 
-  <!-- BADGES -->
+  <!-- PAGINATION -->
 
-  <div class="section-title">
+  <div class="pagination-box">
 
-    <h2>
-
-      Your Achievements
-
-    </h2>
-
-  </div>
-
-  <div class="badges-grid">
-
-    <div
-      class="badge-card"
-
-      *ngFor="let item of badges"
+    <button
+      (click)="previousPage()"
+      [disabled]="currentPage === 1"
     >
 
-      <div class="badge-icon">
+      Previous
 
-        {{ item.icon }}
+    </button>
 
-      </div>
+    <span>
 
-      <h4>
+      Page {{ currentPage }} of {{ totalPages }}
 
-        {{ item.title }}
+    </span>
 
-      </h4>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+    >
 
-      <p>
+      Next
 
-        {{ item.subtitle }}
-
-      </p>
-
-    </div>
+    </button>
 
   </div>
 
   <!-- PERFORMANCE -->
 
-  <!-- <div class="section-title">
+  <div class="section-title">
 
     <h2>
 
@@ -422,13 +685,13 @@
 
       <p>
 
-        Study Hours
+        Average Test Score
 
       </p>
 
       <h2>
 
-        12.5 hrs
+        96%
 
       </h2>
 
@@ -438,13 +701,13 @@
 
       <p>
 
-        Classes Attended
+        Tests Attempted
 
       </p>
 
       <h2>
 
-        14 / 16
+        24
 
       </h2>
 
@@ -454,13 +717,13 @@
 
       <p>
 
-        Quiz Accuracy
+        Assignments Submitted
 
       </p>
 
       <h2>
 
-        92%
+        18
 
       </h2>
 
@@ -470,18 +733,20 @@
 
       <p>
 
-        Notes Read
+        Top 3 Finishes
 
       </p>
 
       <h2>
 
-        28
+        3 Times
 
       </h2>
 
     </div>
 
-  </div> -->
+  </div>
+
+  }
 
 </div>

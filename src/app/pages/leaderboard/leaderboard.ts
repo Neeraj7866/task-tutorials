@@ -18,6 +18,12 @@ import { CommonModule } from '@angular/common';
 
 export class Leaderboard {
 
+  selectedBoard = 'activity';
+
+  currentPage = 1;
+
+  studentsPerPage = 5;
+
   topStudents = [
 
     {
@@ -61,49 +67,92 @@ export class Leaderboard {
 
   ];
 
+  academicTopStudents = [
+
+    {
+
+      name:'Aryan Sharma',
+
+      percentage:'97%',
+
+      subject:'Physics Topper',
+
+      image:'https://i.pravatar.cc/150?img=13',
+
+      rank:2
+    },
+
+    {
+
+      name:'Neeraj Sobhani',
+
+      percentage:'99%',
+
+      subject:'Overall Topper',
+
+      image:'https://i.pravatar.cc/150?img=12',
+
+      rank:1
+    },
+
+    {
+
+      name:'Megha Patel',
+
+      percentage:'96%',
+
+      subject:'Math Topper',
+
+      image:'https://i.pravatar.cc/150?img=32',
+
+      rank:3
+    }
+
+  ];
+
   nearbyStudents = [
 
     {
 
-      rank:25,
+      rank:21,
 
       name:'Rohan Singh',
 
-      streak:20,
+      score:'92%',
 
-      attendance:89,
+      tests:18,
 
-      xp:1920,
+      avg:'89%',
 
       image:'https://i.pravatar.cc/150?img=18'
     },
 
     {
 
-      rank:26,
+      rank:22,
 
       name:'Ananya Gupta',
 
-      streak:19,
+      score:'93%',
 
-      attendance:90,
+      tests:20,
 
-      xp:1870,
+      avg:'91%',
 
       image:'https://i.pravatar.cc/150?img=22'
     },
 
     {
 
-      rank:27,
+      rank:23,
 
       name:'Neeraj Verma',
 
-      streak:18,
+      score:'96%',
 
-      attendance:91,
+      tests:24,
 
-      xp:1820,
+      avg:'94%',
 
       image:'https://i.pravatar.cc/150?img=15',
 
@@ -112,32 +161,107 @@ export class Leaderboard {
 
     {
 
-      rank:28,
+      rank:24,
 
       name:'Kunal Mehta',
 
-      streak:17,
+      score:'90%',
 
-      attendance:88,
+      tests:17,
 
-      xp:1750,
+      avg:'87%',
 
       image:'https://i.pravatar.cc/150?img=28'
     },
 
     {
 
-      rank:29,
+      rank:25,
 
       name:'Pooja Sharma',
 
-      streak:16,
+      score:'88%',
 
-      attendance:87,
+      tests:16,
 
-      xp:1680,
+      avg:'85%',
 
       image:'https://i.pravatar.cc/150?img=45'
+    },
+
+    {
+
+      rank:26,
+
+      name:'Rahul Jain',
+
+      score:'87%',
+
+      tests:15,
+
+      avg:'84%',
+
+      image:'https://i.pravatar.cc/150?img=33'
+    },
+
+    {
+
+      rank:27,
+
+      name:'Simran Kaur',
+
+      score:'91%',
+
+      tests:19,
+
+      avg:'88%',
+
+      image:'https://i.pravatar.cc/150?img=52'
+    },
+
+    {
+
+      rank:28,
+
+      name:'Aditya Verma',
+
+      score:'89%',
+
+      tests:18,
+
+      avg:'86%',
+
+      image:'https://i.pravatar.cc/150?img=60'
+    },
+
+    {
+
+      rank:29,
+
+      name:'Priya Shah',
+
+      score:'94%',
+
+      tests:22,
+
+      avg:'92%',
+
+      image:'https://i.pravatar.cc/150?img=41'
+    },
+
+    {
+
+      rank:30,
+
+      name:'Sarthak Meena',
+
+      score:'86%',
+
+      tests:14,
+
+      avg:'82%',
+
+      image:'https://i.pravatar.cc/150?img=11'
     }
 
   ];
@@ -190,4 +314,40 @@ export class Leaderboard {
     }
 
   ];
+
+  get paginatedStudents(){
+
+    const start =
+    (this.currentPage - 1)
+    * this.studentsPerPage;
+
+    const end =
+    start + this.studentsPerPage;
+
+    return this.nearbyStudents.slice(start,end);
+  }
+
+  get totalPages(){
+
+    return Math.ceil(
+      this.nearbyStudents.length /
+      this.studentsPerPage
+    );
+  }
+
+  nextPage(){
+
+    if(this.currentPage < this.totalPages){
+
+      this.currentPage++;
+    }
+  }
+
+  previousPage(){
+
+    if(this.currentPage > 1){
+
+      this.currentPage--;
+    }
+  }
 }
