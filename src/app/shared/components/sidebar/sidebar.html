@@ -33,51 +33,42 @@
   </div>
 
   <!-- ITEMS -->
+<div
+  class="sidebar-item"
+  routerLink="/leaderboard"
+  (click)="toggleSidebar()"
+>
 
-  <div
-    class="sidebar-item"
-    routerLink="/live"
-    (click)="toggleSidebar()"
-  >
+  🏆 Leaderboard
 
-    📺 Live Classes
+</div>
 
-  </div>
+<div
+  class="sidebar-item"
+  routerLink="/profile"
+  (click)="toggleSidebar()"
+>
 
-  <div
-    class="sidebar-item"
-    routerLink="/leaderboard"
-    (click)="toggleSidebar()"
-  >
+  👤 Profile
 
-    🏆 Leaderboard
+</div>
 
-  </div>
+<div
+  class="sidebar-item"
+  routerLink="/privacy"
+  (click)="toggleSidebar()"
+>
 
-  <div
-    class="sidebar-item"
-    routerLink="/library"
-    (click)="toggleSidebar()"
-  >
+  🔒 Privacy Policy
 
-    📚 Notes
+</div>
 
-  </div>
+<div
+  class="sidebar-item"
+  (click)="toggleSidebar()"
+>
+ 💡 About Us
 
-  <div
-    class="sidebar-item"
-    routerLink="/profile"
-    (click)="toggleSidebar()"
-  >
-
-    👤 Profile
-
-  </div>
-
-  <div class="sidebar-item">
-
-    ℹ About Us
-
-  </div>
+</div>
 
 </div>
