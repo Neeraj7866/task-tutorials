@@ -110,6 +110,87 @@ export class Leaderboard {
 
   ];
 
+  activityStudents = [
+
+  {
+
+    rank:25,
+
+    name:'Rohan Singh',
+
+    streak:20,
+
+    attendance:89,
+
+    xp:1920,
+
+    image:'https://i.pravatar.cc/150?img=18'
+  },
+
+  {
+
+    rank:26,
+
+    name:'Ananya Gupta',
+
+    streak:19,
+
+    attendance:90,
+
+    xp:1870,
+
+    image:'https://i.pravatar.cc/150?img=22'
+  },
+
+  {
+
+    rank:27,
+
+    name:'Neeraj Verma',
+
+    streak:18,
+
+    attendance:91,
+
+    xp:1820,
+
+    image:'https://i.pravatar.cc/150?img=15',
+
+    current:true
+  },
+
+  {
+
+    rank:28,
+
+    name:'Kunal Mehta',
+
+    streak:17,
+
+    attendance:88,
+
+    xp:1750,
+
+    image:'https://i.pravatar.cc/150?img=28'
+  },
+
+  {
+
+    rank:29,
+
+    name:'Pooja Sharma',
+
+    streak:16,
+
+    attendance:87,
+
+    xp:1680,
+
+    image:'https://i.pravatar.cc/150?img=45'
+  }
+
+];
+
   nearbyStudents = [
 
     {

@@ -310,6 +310,68 @@
 
   </div>
 
+  <div class="section-title">
+
+  <h2>
+
+    Students Near You
+
+  </h2>
+
+</div>
+
+<div class="students-card">
+
+  <div
+    class="student-row"
+    [class.current-user]="item.current"
+    *ngFor="let item of activityStudents"
+  >
+
+    <div class="student-left">
+
+      <span class="rank-number">
+
+        {{ item.rank }}
+
+      </span>
+
+      <img [src]="item.image"/>
+
+      <h4>
+
+        {{ item.name }}
+
+      </h4>
+
+    </div>
+
+    <div class="student-right">
+
+      <span>
+
+        🔥 {{ item.streak }}
+
+      </span>
+
+      <span>
+
+        {{ item.attendance }}%
+
+      </span>
+
+      <span>
+
+        ⭐ {{ item.xp }}
+
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+ 
   <!-- BADGES -->
 
   <div class="section-title">
@@ -667,85 +729,109 @@
 
   </div>
 
-  <!-- PERFORMANCE -->
+ <!-- PERFORMANCE -->
 
-  <div class="section-title">
+<div class="section-title">
+
+  <h2>
+
+    Performance Overview
+
+  </h2>
+
+</div>
+
+<div class="performance-grid">
+
+  <div class="performance-card">
+
+    <div class="performance-icon">
+
+      📊
+
+    </div>
+
+    <p>
+
+      Average Test Score
+
+    </p>
 
     <h2>
 
-      Performance Overview
+      96%
 
     </h2>
 
   </div>
 
-  <div class="performance-grid">
+  <div class="performance-card">
 
-    <div class="performance-card">
+    <div class="performance-icon">
 
-      <p>
-
-        Average Test Score
-
-      </p>
-
-      <h2>
-
-        96%
-
-      </h2>
+      📝
 
     </div>
 
-    <div class="performance-card">
+    <p>
 
-      <p>
+      Tests Attempted
 
-        Tests Attempted
+    </p>
 
-      </p>
+    <h2>
 
-      <h2>
+      24
 
-        24
-
-      </h2>
-
-    </div>
-
-    <div class="performance-card">
-
-      <p>
-
-        Assignments Submitted
-
-      </p>
-
-      <h2>
-
-        18
-
-      </h2>
-
-    </div>
-
-    <div class="performance-card">
-
-      <p>
-
-        Top 3 Finishes
-
-      </p>
-
-      <h2>
-
-        3 Times
-
-      </h2>
-
-    </div>
+    </h2>
 
   </div>
+
+  <div class="performance-card">
+
+    <div class="performance-icon">
+
+      📚
+
+    </div>
+
+    <p>
+
+      Assignments Submitted
+
+    </p>
+
+    <h2>
+
+      18
+
+    </h2>
+
+  </div>
+
+  <div class="performance-card">
+
+    <div class="performance-icon">
+
+      🏆
+
+    </div>
+
+    <p>
+
+      Top 3 Finishes
+
+    </p>
+
+    <h2>
+
+      3 Times
+
+    </h2>
+
+  </div>
+
+</div>
 
   }
 
