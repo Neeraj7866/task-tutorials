@@ -3,7 +3,7 @@
 <div
   class="sidebar-overlay"
   *ngIf="sidebarOpen"
-  (click)="toggleSidebar()"
+  (click)="closeSidebar()"
 >
 
 </div>
@@ -36,7 +36,7 @@
 <div
   class="sidebar-item"
   routerLink="/leaderboard"
-  (click)="toggleSidebar()"
+  (click)="closeSidebar()"
 >
 
   🏆 Leaderboard
@@ -46,7 +46,7 @@
 <div
   class="sidebar-item"
   routerLink="/profile"
-  (click)="toggleSidebar()"
+  (click)="closeSidebar()"
 >
 
   👤 Profile
@@ -56,7 +56,7 @@
 <div
   class="sidebar-item"
   routerLink="/privacy"
-  (click)="toggleSidebar()"
+  (click)="closeSidebar()"
 >
 
   🔒 Privacy Policy
@@ -65,7 +65,7 @@
 
 <div
   class="sidebar-item"
-  (click)="toggleSidebar()"
+  (click)="closeSidebar()"
 >
  💡 About Us
 

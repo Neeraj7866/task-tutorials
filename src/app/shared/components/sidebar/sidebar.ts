@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component,Input,Output,EventEmitter} from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
@@ -23,9 +23,12 @@ export class SidebarComponent{
 
   @Input() sidebarOpen = false;
 
-  toggleSidebar(){
+  @Output()
+  sidebarOpenChange =
+  new EventEmitter<boolean>();
 
-    this.sidebarOpen =
-    !this.sidebarOpen;
+  closeSidebar(){
+
+    this.sidebarOpenChange.emit(false);
   }
 }
