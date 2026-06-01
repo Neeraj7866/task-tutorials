@@ -559,3 +559,134 @@ input:checked + .slider:before{
     color:#ff7a7f;
 }
 
+/* ========================= */
+/* PROFILE PREMIUM ANIMATIONS */
+/* ========================= */
+
+/* PROFILE HEADER */
+
+.profile-section{
+
+    opacity:0;
+
+    animation:
+    fadeSlide 0.6s ease forwards;
+}
+
+/* STATS */
+
+.stat-card{
+
+    opacity:0;
+
+    animation:
+    fadeSlide 0.6s ease forwards;
+}
+
+.stat-card:nth-child(1){
+
+    animation-delay:0.2s;
+}
+
+.stat-card:nth-child(2){
+
+    animation-delay:0.4s;
+}
+
+.stat-card:nth-child(3){
+
+    animation-delay:0.6s;
+}
+
+/* OPTIONS */
+
+.option-card{
+
+    opacity:0;
+
+    animation:
+    fadeSlide 0.6s ease forwards;
+}
+
+.option-card:nth-child(1){
+
+    animation-delay:0.2s;
+}
+
+.option-card:nth-child(2){
+
+    animation-delay:0.4s;
+}
+
+.option-card:nth-child(3){
+
+    animation-delay:0.6s;
+}
+
+.option-card:nth-child(4){
+
+    animation-delay:0.8s;
+}
+
+/* SETTINGS */
+
+.setting-item{
+
+    opacity:0;
+
+    animation:
+    fadeSlide 0.6s ease forwards;
+}
+
+.setting-item:nth-child(1){
+
+    animation-delay:0.2s;
+}
+
+.setting-item:nth-child(2){
+
+    animation-delay:0.4s;
+}
+
+.setting-item:nth-child(3){
+
+    animation-delay:0.6s;
+}
+
+.setting-item:nth-child(4){
+
+    animation-delay:0.8s;
+}
+
+/* LOGOUT BUTTON */
+
+.logout-btn{
+
+    opacity:0;
+
+    animation:
+    fadeSlide 0.6s ease forwards;
+
+    animation-delay:1s;
+}
+
+/* KEYFRAME */
+
+@keyframes fadeSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(24px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}

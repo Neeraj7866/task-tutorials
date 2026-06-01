@@ -558,7 +558,9 @@ body.dark-mode option{
 .note-card,
 .video-card{
 
-  animation:fadeSlide 0.5s ease;
+ opacity:0;
+
+animation:fadeUp 0.5s ease forwards;
 }
 
 /* STAGGER EFFECT */
@@ -566,25 +568,30 @@ body.dark-mode option{
 .note-card:nth-child(1),
 .video-card:nth-child(1){
 
-  animation-delay:0.1s;
+  animation-delay:0.15s;
 }
 
 .note-card:nth-child(2),
 .video-card:nth-child(2){
 
-  animation-delay:0.2s;
+  animation-delay:0.3s;
 }
 
 .note-card:nth-child(3),
 .video-card:nth-child(3){
 
-  animation-delay:0.3s;
+  animation-delay:0.45s;
 }
 
 .note-card:nth-child(4),
 .video-card:nth-child(4){
 
-  animation-delay:0.4s;
+  animation-delay:0.6s;
+}
+.note-card:nth-child(5),
+.video-card:nth-child(5){
+
+  animation-delay:0.75s;
 }
 
 

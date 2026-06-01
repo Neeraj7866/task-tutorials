@@ -155,9 +155,6 @@
 
   width:150px;
 
-  transform:
-  translateY(-22px);
-
   border:
   2px solid #ffd56b;
 }
@@ -175,6 +172,7 @@
   transform:translateX(-50%);
 
   font-size:34px;
+  animation:floatCrown 2.5s ease-in-out infinite;
 
   line-height:1;
 
@@ -806,14 +804,10 @@
     width:210px;
   }
 
-  .main{
+.main{
 
-    width:255px;
-
-    transform:
-    translateY(-24px);
-  }
-
+  width:255px;
+}
   .podium-card{
 
     padding:24px 22px;
@@ -1085,4 +1079,259 @@
 
   font-size:16px !important;
 }
+
+/* ========================= */
+/* PREMIUM LEADERBOARD ANIMATIONS */
+/* ========================= */
+
+/* PODIUM ENTRY */
+
+.small{
+
+  opacity:0;
+
+  animation:
+  podiumRise 0.7s ease forwards;
+}
+
+/* 3rd PLACE */
+
+.podium-section .small:last-child{
+
+  animation-delay:0.2s;
+}
+
+/* 2nd PLACE */
+
+.podium-section .small:first-child{
+
+  animation-delay:0.4s;
+}
+
+/* 1st PLACE */
+
+.main{
+
+  opacity:0;
+
+  animation:
+  podiumRise 0.8s ease forwards;
+
+  animation-delay:0.6s;
+}
+
+/* STUDENT LIST */
+
+.student-row{
+
+  opacity:0;
+
+  animation:
+  fadeSlide 0.6s ease forwards;
+}
+
+.student-row:nth-child(1){
+
+  animation-delay:0.2s;
+}
+
+.student-row:nth-child(2){
+
+  animation-delay:0.4s;
+}
+
+.student-row:nth-child(3){
+
+  animation-delay:0.6s;
+}
+
+.student-row:nth-child(4){
+
+  animation-delay:0.8s;
+}
+
+.student-row:nth-child(5){
+
+  animation-delay:1s;
+}
+
+/* BADGES */
+
+.badge-card{
+
+  opacity:0;
+
+  animation:
+  fadeSlide 0.6s ease forwards;
+}
+
+.badge-card:nth-child(1){
+
+  animation-delay:0.2s;
+}
+
+.badge-card:nth-child(2){
+
+  animation-delay:0.4s;
+}
+
+.badge-card:nth-child(3){
+
+  animation-delay:0.6s;
+}
+
+.badge-card:nth-child(4){
+
+  animation-delay:0.8s;
+}
+
+.badge-card:nth-child(5){
+
+  animation-delay:1s;
+}
+
+/* PERFORMANCE */
+
+.performance-card{
+
+  opacity:0;
+
+  animation:
+  fadeSlide 0.6s ease forwards;
+}
+
+.performance-card:nth-child(1){
+
+  animation-delay:0.2s;
+}
+
+.performance-card:nth-child(2){
+
+  animation-delay:0.4s;
+}
+
+.performance-card:nth-child(3){
+
+  animation-delay:0.6s;
+}
+
+.performance-card:nth-child(4){
+
+  animation-delay:0.8s;
+}
+/* ========================= */
+/* PREMIUM HOVER EFFECTS */
+/* ========================= */
+
+.podium-card{
+
+  transition:
+  box-shadow 0.3s ease;
+}
+
+.podium-card:hover{
+
+  box-shadow:
+  0 18px 42px rgba(255,91,91,0.18);
+}
+
+.rank-card{
+
+  transition:
+  box-shadow 0.3s ease;
+}
+
+.rank-card:hover{
+
+  box-shadow:
+  0 18px 42px rgba(255,91,91,0.18);
+}
+
+.badge-card:hover{
+
+  box-shadow:
+  0 16px 36px rgba(0,0,0,0.12);
+}
+
+.performance-card:hover{
+
+  box-shadow:
+  0 16px 36px rgba(0,0,0,0.12);
+}
+
+/* CURRENT USER */
+
+.current-user{
+
+  position:relative;
+
+  box-shadow:
+  0 0 12px rgba(255,91,91,0.10);
+}
+/* KEYFRAMES */
+
+@keyframes fadeSlide{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(24px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+  }
+}
+
+@keyframes podiumRise{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(60px)
+    scale(0.9);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+  }
+}
+
+@keyframes floatCrown{
+
+  0%{
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+  }
+
+  50%{
+
+    transform:
+    translateX(-50%)
+    translateY(-6px);
+  }
+
+  100%{
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+  }
+}
+
 
