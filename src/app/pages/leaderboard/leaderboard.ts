@@ -23,6 +23,7 @@ export class Leaderboard {
   currentPage = 1;
 
   studentsPerPage = 5;
+  
 
   topStudents = [
 
