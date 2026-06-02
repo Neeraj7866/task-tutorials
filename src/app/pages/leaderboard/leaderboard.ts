@@ -20,10 +20,7 @@ export class Leaderboard {
 
   selectedBoard = 'activity';
   
-
-  currentPage = 1;
-
-  studentsPerPage = 5;
+visibleStudents = 5;
   topStudents = [
 
     {
@@ -396,40 +393,15 @@ export class Leaderboard {
 
   ];
 
+loadMore(){
 
-  get paginatedStudents(){
+  this.visibleStudents += 5;
+}
+get displayedStudents(){
 
-    const start =
-    (this.currentPage - 1)
-    * this.studentsPerPage;
-
-    const end =
-    start + this.studentsPerPage;
-
-    return this.nearbyStudents.slice(start,end);
-  }
-
-  get totalPages(){
-
-    return Math.ceil(
-      this.nearbyStudents.length /
-      this.studentsPerPage
-    );
-  }
-
-  nextPage(){
-
-    if(this.currentPage < this.totalPages){
-
-      this.currentPage++;
-    }
-  }
-
-  previousPage(){
-
-    if(this.currentPage > 1){
-
-      this.currentPage--;
-    }
-  }
+  return this.nearbyStudents.slice(
+    0,
+    this.visibleStudents
+  );
+}
 }

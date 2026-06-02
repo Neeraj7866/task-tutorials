@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-privacy',
@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './privacy.html',
   styleUrl: './privacy.scss',
 })
-export class Privacy {}
+export class Privacy {
+  ngOnInit(): void {
+
+  window.scrollTo(0,0);
+}
+}

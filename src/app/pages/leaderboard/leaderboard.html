@@ -633,103 +633,7 @@
 
   </div>
 
-  <!-- OVERALL RANKINGS -->
-
-  <div class="section-title">
-
-    <h2>
-
-      Overall Rankings
-
-    </h2>
-
-  </div>
-
-  <div class="students-card">
-
-    <div
-      class="student-row"
-      [class.current-user]="item.current"
-      *ngFor="let item of paginatedStudents"
-    >
-
-      <div class="student-left">
-
-        <span class="rank-number">
-
-          {{ item.rank }}
-
-        </span>
-
-        <img
-          [src]="item.image"
-        />
-
-        <h4>
-
-          {{ item.name }}
-
-        </h4>
-
-      </div>
-
-      <div class="student-right">
-
-        <span>
-
-          {{ item.score }}
-
-        </span>
-
-        <span>
-
-          {{ item.tests }} Tests
-
-        </span>
-
-        <span>
-
-          {{ item.avg }}
-
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- PAGINATION -->
-
-  <div class="pagination-box">
-
-    <button
-      (click)="previousPage()"
-      [disabled]="currentPage === 1"
-    >
-
-      Previous
-
-    </button>
-
-    <span>
-
-      Page {{ currentPage }} of {{ totalPages }}
-
-    </span>
-
-    <button
-      (click)="nextPage()"
-      [disabled]="currentPage === totalPages"
-    >
-
-      Next
-
-    </button>
-
-  </div>
-
- <!-- PERFORMANCE -->
+   <!-- PERFORMANCE -->
 
 <div class="section-title">
 
@@ -832,6 +736,89 @@
   </div>
 
 </div>
+
+  <!-- OVERALL RANKINGS -->
+
+  <div class="section-title">
+
+    <h2>
+
+      Overall Rankings
+
+    </h2>
+
+  </div>
+
+  <div class="students-card">
+
+    <div
+      class="student-row"
+      [class.current-user]="item.current"
+      *ngFor="let item of displayedStudents"
+    >
+
+      <div class="student-left">
+
+        <span class="rank-number">
+
+          {{ item.rank }}
+
+        </span>
+
+        <img
+          [src]="item.image"
+        />
+
+        <h4>
+
+          {{ item.name }}
+
+        </h4>
+
+      </div>
+
+      <div class="student-right">
+
+        <span>
+
+          {{ item.score }}
+
+        </span>
+
+        <span>
+
+          {{ item.tests }} Tests
+
+        </span>
+
+        <span>
+
+          {{ item.avg }}
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+@if(visibleStudents < nearbyStudents.length){
+
+<div class="load-more-box">
+
+  <button
+    class="load-more-btn"
+    (click)="loadMore()"
+  >
+
+    View More Rankings ↓
+
+  </button>
+
+</div>
+
+}
+ 
 
   }
 

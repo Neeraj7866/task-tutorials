@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { Auth, onAuthStateChanged } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import {
+  Router,
+  NavigationEnd
+} from '@angular/router';
 
 
 @Component({
@@ -50,21 +53,31 @@ export class App implements OnInit {
         }
       }
     });
+    this.router.events.subscribe(event => {
+
+  if(event instanceof NavigationEnd){
+
+    window.scrollTo(0,0);
   }
+});
 
-  ngOnInit(): void {
-
-    const darkMode =
-    localStorage.getItem('darkMode');
-
-    if(darkMode === 'enabled'){
-
-      document.body.classList.add('dark-mode');
-
-    }else{
-
-      document.body.classList.remove('dark-mode');
-    }
   }
+  
 
+ngOnInit(): void {
+
+  history.scrollRestoration = 'manual';
+
+  const darkMode =
+  localStorage.getItem('darkMode');
+
+  if(darkMode === 'enabled'){
+
+    document.body.classList.add('dark-mode');
+
+  }else{
+
+    document.body.classList.remove('dark-mode');
+  }
+}
 }
