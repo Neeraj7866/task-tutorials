@@ -70,5 +70,18 @@ export const routes: Routes = [
 {
   path:'leaderboard',
   component:Leaderboard
+},
+{
+  path:'privacy',
+  loadComponent:() =>
+  import('./pages/privacy/privacy')
+  .then(m => m.Privacy)
+},
+
+{
+  path:'about',
+  loadComponent:() =>
+  import('./pages/about-us/about-us')
+  .then(m => m.AboutUs)
 }
 ];

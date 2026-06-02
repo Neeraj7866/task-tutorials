@@ -19,12 +19,11 @@ import { CommonModule } from '@angular/common';
 export class Leaderboard {
 
   selectedBoard = 'activity';
+  
 
   currentPage = 1;
 
   studentsPerPage = 5;
-  
-
   topStudents = [
 
     {
@@ -396,6 +395,7 @@ export class Leaderboard {
     }
 
   ];
+
 
   get paginatedStudents(){
 
