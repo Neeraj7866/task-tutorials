@@ -495,5 +495,15 @@ label{
 
     padding:32px 20px;
   }
+  .button-row{
+
+    gap:12px;
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    flex:1;
+  }
 
 }
