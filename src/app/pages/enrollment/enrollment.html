@@ -1,0 +1,453 @@
+@if(!enrollmentSubmitted){
+
+<!-- WHOLE EXISTING FORM -->
+
+
+<div class="enrollment-page">
+
+  <div class="form-card">
+
+    <div class="hero-card">
+
+  <h1>
+
+    🎓 Student Enrollment Form
+
+  </h1>
+
+  <p>
+
+    Join Task Tutorials and begin your
+    learning journey today.
+
+  </p>
+
+</div>
+
+<div class="step-progress">
+
+  <div
+    class="step-pill"
+    [class.completed-step]="currentStep > 1"
+[class.active-step]="currentStep === 1"
+  >
+
+    Personal Details
+
+  </div>
+
+  <div
+    class="step-pill"
+   [class.completed-step]="currentStep > 2"
+[class.active-step]="currentStep === 2"
+  >
+
+    Academic Details
+
+  </div>
+
+  <div
+    class="step-pill"
+    [class.active-step]="currentStep === 3"
+  >
+
+    Verification
+
+  </div>
+
+</div>
+
+<div class="progress-track">
+
+ <div
+  class="progress-fill"
+  [style.width.%]="currentStep === 1 ? 25 :
+                  currentStep === 2 ? 50 :
+                  75"
+>
+</div>
+
+</div>
+
+<div class="progress-text">
+
+  {{ currentStep === 1 ? '25%' :
+     currentStep === 2 ? '50%' :
+     '75%' }}
+  Complete
+
+</div>
+
+    <!-- STEP 1 -->
+
+    @if(currentStep === 1){
+
+    <div class="form-section">
+
+     <label>
+
+  Full Name
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.fullName"
+  (ngModelChange)="saveFormData()"
+/>
+
+<label>
+
+  Date of Birth
+
+</label>
+
+<input
+  #dobInput
+  type="date"
+  [(ngModel)]="student.dob"
+  (click)="openDatePicker(dobInput)"
+  (ngModelChange)="saveFormData()"
+/>
+      <label>
+
+  Gender
+
+</label>
+
+<select
+  [(ngModel)]="student.gender"
+  (ngModelChange)="saveFormData()"
+>
+
+  <option>Male</option>
+  <option>Female</option>
+
+</select>
+      <!-- <input
+        type="file"
+      /> -->
+
+    <label>
+
+  Mobile Number
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.mobile"
+  (ngModelChange)="saveFormData()"
+/>
+
+   <label>
+
+  Email Address
+
+</label>
+
+<input
+  type="email"
+  [(ngModel)]="student.email"
+  (ngModelChange)="saveFormData()"
+/>
+    </div>
+
+    }
+
+    <!-- STEP 2 -->
+
+    @if(currentStep === 2){
+
+    <div class="form-section">
+
+   <label>
+
+  School Name
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.school"
+  (ngModelChange)="saveFormData()"
+/>
+
+    <label>
+
+  Class
+
+</label>
+
+<select
+  [(ngModel)]="student.class"
+  (ngModelChange)="saveFormData()"
+>
+
+  <option value="X">X (10th)</option>
+  <option value="XI">XI (11th)</option>
+  <option value="XII">XII (12th)</option>
+
+</select>
+
+     <label>
+
+  Board
+
+</label>
+
+<select
+  [(ngModel)]="student.board"
+  (ngModelChange)="saveFormData()"
+>
+
+  <option>CBSE</option>
+  <option>ICSE</option>
+  <option>State Board</option>
+
+</select>
+
+      <label>
+
+  Course
+
+</label>
+
+<select
+  [(ngModel)]="student.course"
+  (ngModelChange)="saveFormData()"
+>
+
+  <option>Foundation Mathematics</option>
+  <option>Olympiad</option>
+  <option>NTSE</option>
+  <option>JEE Foundation</option>
+  <option>NEET Foundation</option>
+
+</select>
+
+    <label>
+
+  Preferred Batch Mode
+
+</label>
+
+<select
+  [(ngModel)]="student.batchMode"
+  (ngModelChange)="saveFormData()"
+>
+
+  <option>PCM Offline (₹2000/month)</option>
+  <option>PCM Online (₹1500/month)</option>
+  <option>Biology Offline</option>
+  <option>Biology Online</option>
+
+</select>
+
+    </div>
+
+    }
+
+    <!-- STEP 3 -->
+
+    @if(currentStep === 3){
+
+    <div class="form-section">
+
+     <label>
+
+  Father's Name
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.fatherName"
+  (ngModelChange)="saveFormData()"
+/>
+       <label>
+
+  Father's Occupation
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.fatherOccupation"
+  (ngModelChange)="saveFormData()"
+/>
+
+      <label>
+
+  Mother's Name
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.motherName"
+  (ngModelChange)="saveFormData()"
+/>
+     <label>
+
+  Parent Mobile Number
+
+</label>
+
+<input
+  type="text"
+  [(ngModel)]="student.parentMobile"
+  (ngModelChange)="saveFormData()"
+/>
+
+ <label>
+
+  Full Address
+
+</label>
+
+<textarea
+  [(ngModel)]="student.address"
+  (ngModelChange)="saveFormData()"
+></textarea>
+<!-- 
+      <input
+        type="file"
+      /> -->
+
+    </div>
+
+    }
+
+    <div class="button-row">
+
+      @if(currentStep > 1){
+
+      <button
+        class="secondary-btn"
+        (click)="previousStep()"
+      >
+
+        ← Previous
+
+      </button>
+
+      }
+
+      @if(currentStep < 3){
+
+      <button
+        class="primary-btn"
+        (click)="nextStep()"
+      >
+
+        Continue →  
+
+      </button>
+
+      }
+
+      @if(currentStep === 3){
+
+      <button
+        class="primary-btn"
+        (click)="submitForm()"
+      >
+
+        Submit Enrollment
+
+      </button>
+
+      }
+
+    </div>
+
+  </div>
+
+</div>
+}
+
+@if(enrollmentSubmitted){
+
+    <div class="progress-track">
+
+  <div
+    class="progress-fill success-fill"
+  >
+
+  </div>
+
+</div>
+
+<div class="progress-text">
+
+  100% Complete
+
+</div>
+
+<div class="success-card">
+
+  <div class="success-icon">
+
+    🎉
+
+  </div>
+
+  <h2>
+
+    Enrollment Request Submitted
+
+  </h2>
+
+  <p>
+
+    Your enrollment application has been
+    successfully submitted.
+
+  </p>
+
+  <div class="enrollment-id">
+
+  {{ enrollmentId }}
+
+</div>
+<div>
+<button
+  class="copy-btn"
+  (click)="copyEnrollmentId()"
+>
+
+  {{ copied
+      ? '✅ Copied'
+      : '📋 Copy Enrollment ID'
+  }}
+
+</button>
+</div>
+<div class="status-badge">
+
+  Pending Verification
+
+</div>
+ 
+
+  <p class="success-note">
+
+    Our academic team will review your
+    application and activate your account
+    after verification.
+
+  </p>
+
+   <button
+    class="login-btn"
+    (click)="goToLogin()"
+  >
+
+    Back To Login
+
+  </button>
+
+</div>
+
+}

@@ -42,7 +42,7 @@ export class App implements OnInit {
           this.router.url === '/login'
         ){
 
-          this.router.navigate(['/live']);
+          this.router.navigate(['/enrollment']);
         }
 
       }else{
